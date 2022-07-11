@@ -1,0 +1,17 @@
+<mvc:View controllerName="simmel.mappaInterattiva.controller.Main"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core" 
+	xmlns:l="sap.ui.layout"
+	height="100%" 
+	displayBlock="true"
+>
+	<l:FixFlex fixFirst="false" class="fixFlexFixedSize">
+		<l:fixContent>
+			<core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.FixContent" />
+		</l:fixContent>
+		<l:flexContent>
+			<core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.FlexContent" />
+		</l:flexContent>
+	</l:FixFlex>
+</mvc:View>

@@ -1,0 +1,77 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+>
+  <Dialog 
+    stretch="true"
+    title="{detailsDialog>/context/country_description}"
+  >
+    <subHeader>
+      <OverflowToolbar>
+        <ToolbarSpacer />
+        <Button text="Import Excel" icon="sap-icon://upload" />
+        <Button text="Export Excel" icon="sap-icon://download" />
+      </OverflowToolbar>
+    </subHeader>
+    <content>
+      <VBox>
+        <IconTabBar
+            stretchContentHeight="false"
+            backgroundDesign="Transparent"
+            applyContentPadding="true"
+            expanded="{device>/isNoPhone}"
+        >
+            <items>
+                <IconTabFilter text="Agreement" key="agreement">
+                    <ScrollContainer
+                        height="100%"
+                        width="100%"
+                        horizontal="false"
+                        vertical="true"
+                        visible="{= ${amministrazione>/selectedUser} ? true : false}"
+                    >
+                      <core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.dialog.AgreementDetails" type="XML" />
+                    </ScrollContainer>
+                </IconTabFilter>
+                <IconTabFilter text="Contracts" key="contracts">
+                    <ScrollContainer
+                        height="100%"
+                        width="100%"
+                        horizontal="false"
+                        vertical="true"
+                        visible="{= ${amministrazione>/selectedUser} ? true : false}"
+                    >
+                      <core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.dialog.ContractDetails" type="XML" />
+                    </ScrollContainer>
+                </IconTabFilter>
+                <IconTabFilter text="Offers" key="offers">
+                    <ScrollContainer
+                        height="100%"
+                        width="100%"
+                        horizontal="false"
+                        vertical="true"
+                        visible="{= ${amministrazione>/selectedUser} ? true : false}"
+                    >
+                      <core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.dialog.OffersDetails" type="XML" />
+                    </ScrollContainer>
+                </IconTabFilter>
+                <IconTabFilter text="BID/NO BID" key="bid/no_bid">
+                    <ScrollContainer
+                        height="100%"
+                        width="100%"
+                        horizontal="false"
+                        vertical="true"
+                        visible="{= ${amministrazione>/selectedUser} ? true : false}"
+                    >
+                        <core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.dialog.BidNoBidDetails" type="XML" />
+                    </ScrollContainer>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+      </VBox>
+    </content>
+    <buttons>
+      <Button text="Chiudi" press=".onDefaultDialogClose" />
+    </buttons>
+  </Dialog>
+</core:FragmentDefinition>

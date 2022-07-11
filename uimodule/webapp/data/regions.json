@@ -1,0 +1,238 @@
+{
+  "regions": [
+    {
+      "code": "AL",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Albania",
+      "bids": {
+        "amount": 123000
+      },
+      "contracts": {
+        "amount": 33000,
+        "quantity": 27
+      }
+    },
+    {
+      "code": "AR",
+      "color": "rgb(227,216,0)",
+      "tooltip": "Argentina",
+      "bids": {
+        "amount": 110000000
+      },
+      "contracts": {
+        "amount": 33000,
+        "quantity": 27
+      }
+    },
+    {
+      "code": "AU",
+      "color": "rgb(255,81,0)",
+      "tooltip": "Australia",
+      "bids": {
+        "amount": 8200500
+      },
+      "contracts": {
+        "amount": 33000,
+        "quantity": 27
+      }
+    },
+    {
+      "code": "BD",
+      "color": "rgb(81,255,0)",
+      "tooltip": "Bangladesh",
+      "bids": {
+        "amount": 289764
+      },
+      "contracts": {
+        "amount": 33000,
+        "quantity": 27
+      }
+    },
+    {
+      "code": "BR",
+      "color": "rgb(227,216,0)",
+      "tooltip": "Brazil",
+      "bids": {
+        "amount": 12023864
+      },
+      "contracts": {
+        "amount": 33000,
+        "quantity": 27
+      }
+    },
+    {
+      "code": "CL",
+      "color": "rgb(227,216,0)",
+      "tooltip": "Chile",
+      "bids": {
+        "amount": 123000
+      },
+      "contracts": {
+        "amount": 33000,
+        "quantity": 27
+      }
+    },
+    {
+      "code": "CO",
+      "color": "rgb(227,216,0)",
+      "tooltip": "Colombia",
+      "bids": {
+        "amount": 123000
+      },
+      "contracts": {
+        "amount": 33000,
+        "quantity": 27
+      }
+    },
+    {
+      "code": "CI",
+      "color": "rgb(255,0,0)",
+      "tooltip": "Ivory Coast"
+    },
+    {
+      "code": "HR",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Croatia"
+    },
+    {
+      "code": "EG",
+      "color": "rgb(255,0,0)",
+      "tooltip": "Egypt"
+    },
+    {
+      "code": "PH",
+      "color": "rgb(0,255,0)",
+      "tooltip": "Philippines"
+    },
+    {
+      "code": "JO",
+      "color": "rgb(153,64,0)",
+      "tooltip": "Jordan"
+    },
+    {
+      "code": "GR",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Greece"
+    },
+    {
+      "code": "IN",
+      "color": "rgb(81,255,0)",
+      "tooltip": "India"
+    },
+    {
+      "code": "IE",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Ireland"
+    },
+    {
+      "code": "IL",
+      "color": "rgb(153,64,0)",
+      "tooltip": "Israel"
+    },
+    {
+      "code": "KE",
+      "color": "rgb(255,0,0)",
+      "tooltip": "Kenya"
+    },
+    {
+      "code": "KR",
+      "color": "rgb(47,255,0)",
+      "tooltip": "South Korea"
+    },
+    {
+      "code": "KW",
+      "color": "rgb(153,64,0)",
+      "tooltip": "Kuwait"
+    },
+    {
+      "code": "LB",
+      "color": "rgb(153,64,0)",
+      "tooltip": "Lebanon"
+    },
+    {
+      "code": "LT",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Lithuania"
+    },
+    {
+      "code": "LU",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Luxembourg"
+    },
+    {
+      "code": "MY",
+      "color": "rgb(81,255,0)",
+      "tooltip": "Malaysia"
+    },
+    {
+      "code": "MA",
+      "color": "rgb(255,0,0)",
+      "tooltip": "Morocco"
+    },
+    {
+      "code": "NL",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Netherlands"
+    },
+    {
+      "code": "PL",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Poland"
+    },
+    {
+      "code": "PT",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Portugal"
+    },
+    {
+      "code": "SN",
+      "color": "rgb(255,0,0)",
+      "tooltip": "Senegal"
+    },
+    {
+      "code": "SG",
+      "color": "rgb(255,81,0)",
+      "tooltip": "Singapore"
+    },
+    {
+      "code": "SI",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Slovenia"
+    },
+    {
+      "code": "ES",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Spain"
+    },
+    {
+      "code": "CN",
+      "color": "rgb(81,255,0)",
+      "tooltip": "China"
+    },
+    {
+      "code": "TH",
+      "color": "rgb(81,255,0)",
+      "tooltip": "Thailand"
+    },
+    {
+      "code": "TG",
+      "color": "rgb(255,0,0)",
+      "tooltip": "Togo"
+    },
+    {
+      "code": "TR",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Turkey"
+    },
+    {
+      "code": "VN",
+      "color": "rgb(81,255,0)",
+      "tooltip": "Vietnam"
+    },
+    {
+      "code": "DK",
+      "color": "rgb(0,81,255)",
+      "tooltip": "Denmark"
+    }
+  ]
+}

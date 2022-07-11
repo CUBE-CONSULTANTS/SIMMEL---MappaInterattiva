@@ -1,0 +1,58 @@
+{
+  "bidnobid": [
+    {
+      "country": "AR",
+      "bidnobid_number": "0000001",
+      "sales_manager": "Mario Rossi",
+      "program_manager": "Stefano Bianchi",
+      "preventive_number": "10932782",
+      "description": "",
+      "quantity": "",
+      "customer": "",
+      "end_user": "",
+      "total_amount": "",
+      "bid_deadline": "",
+      "bid_signdate": "",
+      "relative_offer": "",
+      "data": "",
+      "amount": "",
+      "contract": ""
+    },
+    {
+      "country": "AR",
+      "bidnobid_number": "0000002",
+      "sales_manager": "Carlo Verdi",
+      "program_manager": "Matteo Gialli",
+      "preventive_number": "38928390",
+      "description": "",
+      "quantity": "",
+      "customer": "",
+      "end_user": "",
+      "total_amount": "",
+      "bid_deadline": "",
+      "bid-sign_date": "",
+      "relative_offer": "",
+      "data": "",
+      "amount": "",
+      "contract": ""
+    },
+    {
+      "country": "BR",
+      "bidnobid_number": "0000003",
+      "sales_manager": "Federico Viola",
+      "program_manager": "Antonio Neri",
+      "preventive_number": "",
+      "description": "",
+      "quantity": "",
+      "customer": "",
+      "end_user": "",
+      "total_amount": "",
+      "bid_deadline": "",
+      "bid-sign_date": "",
+      "relative_offer": "",
+      "data": "",
+      "amount": "",
+      "contract": ""
+    }
+  ]
+}

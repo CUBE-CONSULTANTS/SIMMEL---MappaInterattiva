@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+>
+  <Dialog 
+    title="Contacts"
+  >
+    <buttons>
+      <Button text="Close" press=".onDefaultDialogClose" />
+    </buttons>
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <Label text="Address" />
+        <Text text="{contactsDialog>/address}" />
+      </VBox>
+      <VBox class="sapUiSmallMargin">
+        <Label text="Phone" />
+        <Text text="{contactsDialog>/phone}" />
+      </VBox>
+      <VBox class="sapUiSmallMargin">
+        <Label text="Email" />
+        <Text text="{contactsDialog>/email}" />
+      </VBox>
+    </content>
+  </Dialog>
+</core:FragmentDefinition>

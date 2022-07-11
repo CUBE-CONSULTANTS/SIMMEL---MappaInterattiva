@@ -1,0 +1,44 @@
+{
+  "contracts": [
+    {
+      "country": "AR",
+      "contract_orders": [],
+      "description": "Random Description",
+      "quantity": "10",
+      "amount": "100",
+      "responsible": "Mario Rossi",
+      "signature_date": "2022-07-08T12:53:35.287Z",
+      "unit_price": "ARS"
+    },
+    {
+      "country": "AR",
+      "contract_orders": [],
+      "description": "Random Description",
+      "quantity": "8",
+      "amount": "27",
+      "responsible": "Carlo Verdi",
+      "signature_date": "2022-07-08T12:53:35.287Z",
+      "unit_price": "ARS"
+    },
+    {
+      "country": "BR",
+      "contract_orders": [],
+      "description": "Random Description",
+      "quantity": "16",
+      "amount": "89",
+      "responsible": "Stefano Bianchi",
+      "signature_date": "2022-07-08T12:53:35.287Z",
+      "unit_price": "BRL"
+    },
+    {
+      "country": "BR",
+      "contract_orders": [],
+      "description": "Random Description",
+      "quantity": "1",
+      "amount": "66",
+      "responsible": "Antonio Neri",
+      "signature_date": "2022-07-08T12:53:35.287Z",
+      "unit_price": "BRL"
+    }
+  ]
+}

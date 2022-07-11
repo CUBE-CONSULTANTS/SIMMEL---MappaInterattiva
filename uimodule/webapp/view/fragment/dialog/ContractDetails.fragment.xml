@@ -1,0 +1,61 @@
+<core:FragmentDefinition
+  xmlns="sap.ui.table"
+  xmlns:m="sap.m"
+  xmlns:core="sap.ui.core"
+>
+  <m:VBox>
+    <Table
+      visibleRowCount="20"
+      selectionMode="None"
+      rows="{detailsDialog>/contracts/items}"
+    >
+      <columns>
+        <Column sortProperty="description" filterProperty="description">
+          <m:Label text="Description" />
+          <template>
+            <m:Text text="{detailsDialog>description}" />
+          </template>
+        </Column>
+        <Column sortProperty="quantity" filterProperty="quantity">
+          <m:Label text="Quantity" />
+          <template>
+            <m:Text text="{detailsDialog>quantity}" />
+          </template>
+        </Column>
+        <Column sortProperty="amount" filterProperty="amount">
+          <m:Label text="Amount" />
+          <template>
+            <m:Text text="{detailsDialog>amount}" />
+          </template>
+        </Column>
+        <Column sortProperty="responsible" filterProperty="responsible">
+          <m:Label text="Responsible" />
+          <template>
+            <m:Text text="{detailsDialog>responsible}" />
+          </template>
+        </Column>
+        <Column sortProperty="signature_date" filterProperty="signature_date">
+          <m:Label text="Signature Date" />
+          <template>
+            <m:Text text="{
+              path: 'detailsDialog>signature_date',
+              formatter: '.formatter.formatStandardDate'  
+            }" />
+          </template>
+        </Column>
+        <Column sortProperty="unit_price" filterProperty="unit_price">
+          <m:Label text="Unit Price" />
+          <template>
+            <m:Text text="{detailsDialog>unit_price}" />
+          </template>
+        </Column>
+        <Column sortProperty="contract_orders" filterProperty="contract_orders">
+          <m:Label text="Contract Orders" />
+          <template>
+            <m:Text text="{detailsDialog>contract_orders}" />
+          </template>
+        </Column>
+      </columns>
+    </Table>
+  </m:VBox>
+</core:FragmentDefinition>

@@ -65,6 +65,10 @@ sap.ui.define(
                     this.getRouter().navTo("appHome", {}, true /* no history*/);
                 }
             },
+
+            onDefaultDialogClose: function(e) {
+                e.getSource().getParent().close();
+            }
         });
     }
 );

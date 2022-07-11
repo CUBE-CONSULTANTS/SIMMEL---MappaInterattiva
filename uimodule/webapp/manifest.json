@@ -71,20 +71,20 @@
       },
       "routes": [
         {
-          "name": "RouteMainView",
+          "name": "Main",
           "pattern": ":?query:",
           "target": [
-            "TargetMainView"
+            "Main"
           ]
         }
       ],
       "targets": {
-        "TargetMainView": {
+        "Main": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "MainView",
-          "viewName": "MainView"
+          "viewId": "Main",
+          "viewName": "Main"
         }
       }
     },

@@ -1,0 +1,50 @@
+{
+	"data" :
+		[
+			{
+				"pos": "-58.5733832;-34.6157437;11",
+				"country": "AR",
+				"country_description": "Argentina",
+				"tooltip": "Buenos Aires",
+				"type": "Default",
+				"icon": "sap-icon://overlay",
+				"category": "Contracts"	
+			},
+			{
+				"pos": "-48.3575573;-15.7738667;9",
+				"country": "BR",
+				"country_description": "Brazil",
+				"tooltip": "Brasilia",
+				"type": "Default",
+				"icon": "sap-icon://overlay",
+				"category": "Contracts"	
+			},
+			{
+				"pos": "-70.7699137;-33.4724228;11",
+				"country": "CL",
+				"country_description": "Chile",
+				"tooltip": "Santiago",
+				"type": "Default",
+				"icon": "sap-icon://overlay",
+				"category": "Contracts"	
+			},
+			{
+				"pos": "-74.2478915;4.6486259;11",
+				"country": "CO",
+				"country_description": "Colombia",
+				"tooltip": "Bogotà",
+				"type": "Default",
+				"icon": "sap-icon://overlay",
+				"category": "Contracts"	
+			},
+			{
+				"pos": "-3.8196189;40.4378698;11",
+				"country": "SP",
+				"country_description": "Spain",
+				"tooltip": "Madrid",
+				"type": "Default",
+				"icon": "sap-icon://overlay",
+				"category": "Contracts"	
+			}
+		]
+}

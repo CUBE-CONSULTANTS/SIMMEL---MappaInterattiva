@@ -1,0 +1,64 @@
+{
+  "agreements": [
+    {
+      "country": "AR",
+      "agency": "Agency01",
+      "agent": "Agent01",
+      "contacts": {
+        "email": "agent01@email.com",
+        "address": "00100, Via del Mare, Roma, RM",
+        "phone": "333333333"
+      },
+      "start_date": "2022-07-08T12:53:35.287Z",
+      "sign": "",
+      "sales_referent": "",
+      "contact_sales": "",
+      "products_list": []
+    },
+    {
+      "country": "AR",
+      "agency": "Agency02",
+      "agent": "Agent02",
+      "contacts": {
+        "email": "agent02@email.com",
+        "address": "00100, Via del Mare, Roma, RM",
+        "phone": "333333333"
+      },
+      "start_date": "2022-07-08T12:53:35.287Z",
+      "sign": "",
+      "sales_referent": "",
+      "contact_sales": "",
+      "products_list": []
+    },
+    {
+      "country": "BR",
+      "agency": "Agency03",
+      "agent": "Agent03",
+      "contacts": {
+        "email": "agent03@email.com",
+        "address": "00100, Via del Mare, Roma, RM",
+        "phone": "333333333"
+      },
+      "start_date": "2022-07-08T12:53:35.287Z",
+      "sign": "",
+      "sales_referent": "",
+      "contact_sales": "",
+      "products_list": []
+    },
+    {
+      "country": "BR",
+      "agency": "Agency04",
+      "agent": "Agent04",
+      "contacts": {
+        "email": "agent04@email.com",
+        "address": "00100, Via del Mare, Roma, RM",
+        "phone": "333333333"
+      },
+      "start_date": "2022-07-08T12:53:35.287Z",
+      "sign": "",
+      "sales_referent": "",
+      "contact_sales": "",
+      "products_list": []
+    }
+  ]
+}

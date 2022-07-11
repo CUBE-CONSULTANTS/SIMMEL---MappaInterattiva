@@ -1,0 +1,106 @@
+<core:FragmentDefinition
+  xmlns="sap.ui.table"
+  xmlns:m="sap.m"
+  xmlns:core="sap.ui.core"
+>
+  <m:VBox>
+    <Table
+        visibleRowCount="20"
+        selectionMode="None"
+        rows="{detailsDialog>/bidnobid/items}"
+      >
+        <columns>
+          <Column sortProperty="bidnobid_number" filterProperty="bidnobid_number">
+            <m:Label text="BID Number" />
+            <template>
+              <m:Text text="{detailsDialog>bidnobid_number}" />
+            </template>
+          </Column>
+          <Column sortProperty="sales_manager" filterProperty="sales_manager">
+            <m:Label text="Sales Manager" />
+            <template>
+              <m:Text text="{detailsDialog>sales_manager}" />
+            </template>
+          </Column>
+          <Column sortProperty="program_manager" filterProperty="program_manager">
+            <m:Label text="Program Manager" />
+            <template>
+              <m:Text text="{detailsDialog>program_manager}" />
+            </template>
+          </Column>
+          <Column sortProperty="preventive_number" filterProperty="preventive_number">
+            <m:Label text="Preventive Number" />
+            <template>
+              <m:Text text="{detailsDialog>preventive_number}" />
+            </template>
+          </Column>
+          <Column sortProperty="description" filterProperty="description">
+            <m:Label text="Description" />
+            <template>
+              <m:Text text="{detailsDialog>description}" />
+            </template>
+          </Column>
+          <Column sortProperty="quantity" filterProperty="quantity">
+            <m:Label text="Quantity" />
+            <template>
+              <m:Text text="{detailsDialog>quantity}" />
+            </template>
+          </Column>
+          <Column sortProperty="customer" filterProperty="customer">
+            <m:Label text="Customer" />
+            <template>
+              <m:Text text="{detailsDialog>customer}" />
+            </template>
+          </Column>
+          <Column sortProperty="end_user" filterProperty="end_user">
+            <m:Label text="End User" />
+            <template>
+              <m:Text text="{detailsDialog>end_user}" />
+            </template>
+          </Column>
+          <Column sortProperty="total_amount" filterProperty="total_amount">
+            <m:Label text="Total Amount" />
+            <template>
+              <m:Text text="{detailsDialog>total_amount}" />
+            </template>
+          </Column>
+          <Column sortProperty="bid_deadline" filterProperty="bid_deadline">
+            <m:Label text="BID Deadline" />
+            <template>
+              <m:Text text="{detailsDialog>bid_deadline}" />
+            </template>
+          </Column>
+          <Column sortProperty="bid_signdate" filterProperty="bid_signdate">
+            <m:Label text="BID Sign Date" />
+            <template>
+              <m:Text text="{detailsDialog>bid_signdate}" />
+            </template>
+          </Column>
+          <Column sortProperty="relative_offer" filterProperty="relative_offer">
+            <m:Label text="Relative Offer" />
+            <template>
+              <m:Text text="{detailsDialog>relative_offer}" />
+            </template>
+          </Column>
+          <Column sortProperty="data" filterProperty="data">
+            <m:Label text="Data" />
+            <template>
+              <m:Text text="{detailsDialog>data}" />
+            </template>
+          </Column>
+          <Column sortProperty="amount" filterProperty="amount">
+            <m:Label text="Amount" />
+            <template>
+              <m:Text text="{detailsDialog>amount}" />
+            </template>
+          </Column>
+          <Column sortProperty="contract" filterProperty="contract">
+            <m:Label text="Contract" />
+            <template>
+              <m:Text text="{detailsDialog>contract}" />
+            </template>
+          </Column>
+        </columns>
+      </Table>
+  </m:VBox>
+</core:FragmentDefinition>

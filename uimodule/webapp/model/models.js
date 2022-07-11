@@ -17,6 +17,32 @@ sap.ui.define(
                 oModel.setDefaultBindingMode("OneWay");
                 return oModel;
             },
+
+            createMainModel: function() {
+                return new JSONModel({
+                    analyticMap: {},
+                    detailsDialog: {
+                        agreements: {
+
+                        },
+                        contracts: {
+
+                        },
+                        offers: {
+                            segmentedButton: {
+                                items: [
+                                    { key: "table", text: "Table" },
+                                    { key: "calendar", text: "Calendar" } 
+                                ],
+                                selectedKey: "table"
+                            }
+                        },
+                        bidnobid: {
+
+                        }
+                    }
+                });
+            }
         };
     }
 );

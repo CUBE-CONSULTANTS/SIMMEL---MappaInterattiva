@@ -1,0 +1,36 @@
+{
+  "legend": {
+    "items": [
+      {
+        "text": "No-Data",
+        "color": "rgb(213,218,221)",
+        "image": ""
+      },
+      {
+        "text": "Europe",
+        "color": "rgb(0,81,255)",
+        "image": ""
+      },
+      {
+        "text": "Asia",
+        "color": "rgb(81,255,0)",
+        "image": ""
+      },
+      {
+        "text": "Africa",
+        "color": "rgb(255,0,0)",
+        "image": ""
+      },
+      {
+        "text": "LATAM",
+        "color": "rgb(227,216,0)",
+        "image": ""
+      },
+      {
+        "text": "Oceania",
+        "color": "rgb(255,81,0)",
+        "image": ""
+      }
+    ]
+  }
+}
