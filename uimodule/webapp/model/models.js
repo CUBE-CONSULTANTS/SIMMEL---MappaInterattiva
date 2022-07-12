@@ -1,5 +1,8 @@
 sap.ui.define(
-    ["sap/ui/model/json/JSONModel", "sap/ui/Device"],
+    [
+        "sap/ui/model/json/JSONModel", 
+        "sap/ui/Device"
+    ],
     /**
      * provide app-view type models (as in the first "V" in MVVC)
      *
@@ -18,9 +21,33 @@ sap.ui.define(
                 return oModel;
             },
 
+            createAppModel: function() {
+                return new JSONModel({
+                    busy: false,
+                    busyIndicatorDelay: 0,
+                    layout: "TwoColumnsMidExpanded"
+                });
+            },
+
             createMainModel: function() {
                 return new JSONModel({
                     analyticMap: {},
+                    table: {
+                        data: []
+                    }
+                });
+            },
+
+            createDetailsModel: function() {
+                return new JSONModel({
+                    mapContainer: {
+                        data: {},
+                        legend: {},
+                        selectedRegion: {},
+                        regions: {},
+                        agreements: {},
+                        contracts: {}
+                    },
                     detailsDialog: {
                         agreements: {
 

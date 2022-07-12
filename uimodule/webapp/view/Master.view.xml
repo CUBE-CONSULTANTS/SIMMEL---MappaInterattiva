@@ -1,0 +1,33 @@
+<mvc:View controllerName="simmel.mappaInterattiva.controller.Master"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core" 
+	xmlns:l="sap.ui.layout"
+	height="100%" 
+	displayBlock="true"
+>
+	<f:DynamicPage
+		busy="{main>/options/busy}"
+		preserveHeaderStateOnScroll="false"
+		toggleHeaderOnTitleClick="false"
+	>
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+						<core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.master.Header" type="XML" />
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.master.FilterBar" type="XML" />
+					</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.master.Table" type="XML" />
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

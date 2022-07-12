@@ -1,0 +1,77 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:ui="sap.ui.table"
+  xmlns:core="sap.ui.core"
+  xmlns:chart="sap.suite.ui.microchart"
+  height="100%"
+>
+  <VBox height="100%">
+    <List
+      items="{
+        path:'master>/table/data'
+      }"
+    >
+      <CustomListItem
+        type="Active"
+        press=".onCustomListItemPress"
+      >
+        <Panel 
+          expandable="true"
+          expanded="false"
+          headerText="Description"
+        >
+          <headerToolbar>
+            <Toolbar>
+              <Title text="{master>country_name}"/>
+              <ToolbarSpacer />
+              <Image width="30px" src="{master>image_path}" />
+            </Toolbar>
+          </headerToolbar>
+          <content>
+            <HBox justifyContent="SpaceBetween" alignItems="Center">
+              <items>
+                <VBox alignItems="Center">
+                  <VBox class="sapUiTinyMarginBottom">
+                    <Title text="Total Agreements" />
+                    <chart:HarveyBallMicroChart size="S" total="100" totalScale="Mrd" colorPalette="sapUiChartPaletteQualitativeHue1" press="press">
+                      <chart:items>
+                        <chart:HarveyBallMicroChartItem fraction="20" fractionScale="Mrd"/>
+                      </chart:items>
+                    </chart:HarveyBallMicroChart>
+                  </VBox>
+                  <VBox>
+                    <Title text="Total Contracts" />
+                    <chart:HarveyBallMicroChart size="S" total="100" totalScale="Mrd" colorPalette="sapUiChartPaletteQualitativeHue1" press="press">
+                      <chart:items>
+                        <chart:HarveyBallMicroChartItem fraction="20" fractionScale="Mrd"/>
+                      </chart:items>
+                    </chart:HarveyBallMicroChart>
+                  </VBox>
+                </VBox>
+                <VBox>
+                  <Title text="Bid Total Amount" />
+                  <chart:BulletMicroChart 
+                    size="S" 
+                    scale="M" 
+                    class="sapUiSmallMargin" 
+                  >
+                    <chart:actual>
+                      <chart:BulletMicroChartData value="{master>bids/amount}" color="Good"/>
+                    </chart:actual>
+                    <chart:thresholds>
+                      <chart:BulletMicroChartData value="0" color="Error"/>
+                      <chart:BulletMicroChartData value="50" color="Critical"/>
+                      <chart:BulletMicroChartData value="150" color="Critical"/>
+                      <chart:BulletMicroChartData value="200" color="Error"/>
+                    </chart:thresholds>
+                  </chart:BulletMicroChart>
+                </VBox>
+              </items>
+            </HBox>
+          </content>
+        </Panel>
+      </CustomListItem>
+    </List>
+  </VBox>
+</core:FragmentDefinition>

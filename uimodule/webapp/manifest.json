@@ -61,30 +61,38 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
+        "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
         "async": true,
         "viewPath": "simmel.mappaInterattiva.view",
-        "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "Main",
-          "pattern": ":?query:",
+          "name": "master",
+          "pattern": ":layout:",
           "target": [
-            "Main"
+            "master",
+            "detail"
+          ]
+        },
+        {
+          "name": "detail",
+          "pattern": "detail/:country:",
+          "target": [
+            "detail"
           ]
         }
       ],
       "targets": {
-        "Main": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "Main",
-          "viewName": "Main"
+        "master": {
+          "controlAggregation": "beginColumnPages",
+          "viewName": "Master"
+        },
+        "detail": {
+          "controlAggregation": "midColumnPages",
+          "viewName": "Detail"
         }
       }
     },

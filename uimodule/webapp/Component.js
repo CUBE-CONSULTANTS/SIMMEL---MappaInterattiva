@@ -26,7 +26,9 @@ sap.ui.define(
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
-                this.setModel(models.createMainModel(), "main");
+                this.setModel(models.createAppModel(), "app");
+                this.setModel(models.createMainModel(), "master");
+                this.setModel(models.createDetailsModel(), "detail");
             },
         });
     }

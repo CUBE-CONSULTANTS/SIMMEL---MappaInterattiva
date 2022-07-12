@@ -9,16 +9,16 @@
         <m:HBox class="sapUiTinyMargin">
           <m:SegmentedButton 
             width="auto" 
-            items="{main>/detailsDialog/offers/segmentedButton/items}"
-            selectedKey="{main>/detailsDialog/offers/segmentedButton/selectedKey}"
+            items="{detail>/detailsDialog/offers/segmentedButton/items}"
+            selectedKey="{detail>/detailsDialog/offers/segmentedButton/selectedKey}"
           >
             <m:items>
-              <m:SegmentedButtonItem width="100%" text="{main>text}" key="{main>key}" />
+              <m:SegmentedButtonItem width="100%" text="{detail>text}" key="{detail>key}" />
             </m:items>
           </m:SegmentedButton>
         </m:HBox>
         <Table
-          visible="{= ${main>/detailsDialog/offers/segmentedButton/selectedKey} === 'table'}"
+          visible="{= ${detail>/detailsDialog/offers/segmentedButton/selectedKey} === 'table'}"
           visibleRowCount="20"
           selectionMode="None"
           rows="{detailsDialog>/offers/table/items}"
@@ -78,7 +78,7 @@
           </columns>
         </Table>
         <m:PlanningCalendar
-          visible="{= ${main>/detailsDialog/offers/segmentedButton/selectedKey} === 'calendar'}"
+          visible="{= ${detail>/detailsDialog/offers/segmentedButton/selectedKey} === 'calendar'}"
           viewKey="Week"
           builtInViews="Week,OneMonth"
           stickyHeader="true"

@@ -1,0 +1,42 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:chart="sap.suite.ui.microchart"
+>
+  <Panel 
+    id="detailsPanel"
+    expandable="true"
+    expanded="false"
+    headerText="Description"
+  >
+    <headerToolbar>
+      <Toolbar>
+        <Title text="{detail>/selectedRegion/country_name}" />
+        <ToolbarSpacer />
+        <Image width="30px" src="{detail>/selectedRegion/image_path}" />
+      </Toolbar>
+    </headerToolbar>
+    <content>
+      <VBox justifyContent="Center" alignItems="Center">
+        <items>
+          <Title text="Bid Total Amount" />
+          <chart:BulletMicroChart 
+            size="S" 
+            scale="M" 
+            class="sapUiSmallMargin" 
+          >
+            <chart:actual>
+              <chart:BulletMicroChartData value="{detail>/selectedRegion/bids/amount}" color="Good"/>
+            </chart:actual>
+            <chart:thresholds>
+              <chart:BulletMicroChartData value="0" color="Error"/>
+              <chart:BulletMicroChartData value="50" color="Critical"/>
+              <chart:BulletMicroChartData value="150" color="Critical"/>
+              <chart:BulletMicroChartData value="200" color="Error"/>
+            </chart:thresholds>
+          </chart:BulletMicroChart>
+        </items>
+      </VBox>
+    </content>
+  </Panel>
+</core:FragmentDefinition>
