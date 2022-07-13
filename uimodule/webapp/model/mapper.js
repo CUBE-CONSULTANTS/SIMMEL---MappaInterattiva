@@ -5,11 +5,22 @@ sap.ui.define([
       "use strict";
 
       return {
-          mapCalendarData: function(aData) {
+          mapTreeTableData: function(aData) {
             return aData.map(el => {
               return {
-                "customer_name": el.customer_name,
-                "offers": aData.filter(item => item.customer_name === el.customer_name)
+                "name": el.customer_name,
+                "rows": aData.filter(item => item.customer_name === el.customer_name).map(mapItem => {
+                  return {
+                    "offer_number": mapItem.offer_number,
+                    "country": mapItem.country,
+                    "pays": mapItem.pays,
+                    "name": mapItem.offer_title,
+                    "amount": mapItem.amount,
+                    "startDate": new Date(mapItem.startDate),
+                    "endDate": new Date(mapItem.endDate),
+                    "commercial": mapItem.commercial
+                  }
+                })
               }
             }).filter((value, index, self) =>
               index === self.findIndex((t) => (

@@ -7,7 +7,8 @@
       "customer_name": "Mario Rossi",
       "offer_title": "Offer01",
       "amount": "",
-      "date": "2022-07-08T12:53:35.287Z",
+      "startDate": "2022-07-14T12:53:35.287Z",
+      "endDate": "2022-07-18T12:53:35.287Z",
       "commercial": ""
     },
     {
@@ -17,7 +18,8 @@
       "customer_name": "Mario Rossi",
       "offer_title": "Offer02",
       "amount": "",
-      "date": "2022-07-09T12:53:35.287Z",
+      "startDate": "2022-07-14T12:53:35.287Z",
+      "endDate": "2022-07-18T12:53:35.287Z",
       "commercial": ""
     },
     {
@@ -27,7 +29,8 @@
       "customer_name": "Stefano Bianchi",
       "offer_title": "Offer03",
       "amount": "",
-      "date": "2022-07-12T12:53:35.287Z",
+      "startDate": "2022-07-13T12:53:35.287Z",
+      "endDate": "2022-07-18T12:53:35.287Z",
       "commercial": ""
     },
     {
@@ -37,7 +40,8 @@
       "customer_name": "Carlo Verdi",
       "offer_title": "Offer04",
       "amount": "",
-      "date": "2022-07-14T12:53:35.287Z",
+      "startDate": "2022-07-14T12:53:35.287Z",
+      "endDate": "2022-07-18T12:53:35.287Z",
       "commercial": ""
     },
     {
@@ -47,7 +51,8 @@
       "customer_name": "Mario Rossi",
       "offer_title": "Offer04",
       "amount": "",
-      "date": "2022-07-14T12:53:35.287Z",
+      "startDate": "2022-07-14T12:53:35.287Z",
+      "endDate": "2022-07-18T12:53:35.287Z",
       "commercial": ""
     },
     {
@@ -57,7 +62,8 @@
       "customer_name": "Carlo Verdi",
       "offer_title": "Offer04",
       "amount": "",
-      "date": "2022-07-14T12:53:35.287Z",
+      "startDate": "2022-07-14T12:53:35.287Z",
+      "endDate": "2022-07-18T12:53:35.287Z",
       "commercial": ""
     },
     {
@@ -67,7 +73,19 @@
       "customer_name": "Stefano Bianchi",
       "offer_title": "Offer04",
       "amount": "",
-      "date": "2022-07-14T12:53:35.287Z",
+      "startDate": "2022-07-11T12:53:35.287Z",
+      "endDate": "2022-07-12T12:53:35.287Z",
+      "commercial": ""
+    },
+    {
+      "offer_number": "0008",
+      "country": "BR",
+      "pays": "",
+      "customer_name": "Stefano Bianchi",
+      "offer_title": "Offer05",
+      "amount": "",
+      "startDate": "2022-07-15T12:53:35.287Z",
+      "endDate": "2022-07-18T12:53:35.287Z",
       "commercial": ""
     }
   ]

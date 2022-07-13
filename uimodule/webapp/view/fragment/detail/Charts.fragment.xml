@@ -1,0 +1,65 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns:viz="sap.viz.ui5.controls"
+  xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+  xmlns:viz.data="sap.viz.ui5.data"
+>
+  <l:FixFlex minFlexSize="400">
+    <l:fixContent>
+      <VBox alignItems="End">
+        <Select id="idoSelect1" change="handleSelectionChange">
+          <core:Item key="0" text="Agreements"/>
+          <core:Item key="1" text="Contracts"/>
+          <core:Item key="2" text="Offers"/>
+          <core:Item key="3" text="BID/NO BID"/>
+        </Select>
+      </VBox>
+    </l:fixContent>
+    <l:flexContent>
+      <viz:VizFrame
+        uiConfig="{applicationSet:'fiori'}"
+        height='100%' 
+        width="100%" 
+        vizType='line'
+      >
+        <viz:dataset>
+            <viz.data:FlattenedDataset 
+              data="{detail>/panel/chart1/data}"
+            >
+                <viz.data:dimensions>
+                    <viz.data:DimensionDefinition 
+                      name="Week"
+                      value="{detail>Week}" 
+                    />
+                </viz.data:dimensions>
+                <viz.data:measures>
+                    <viz.data:MeasureDefinition 
+                      name="Revenue"
+                      value="{detail>Revenue}" 
+                    />
+                    <viz.data:MeasureDefinition 
+                      name="Cost"
+                      value="{detail>Cost}" 
+                    />
+                </viz.data:measures>
+            </viz.data:FlattenedDataset>
+        </viz:dataset>
+
+        <viz:feeds>
+            <viz.feeds:FeedItem
+              uid="valueAxis" 
+              type="Measure"
+              values="Revenue" 
+            />
+            <viz.feeds:FeedItem 
+              uid="categoryAxis" 
+              type="Dimension"
+              values="Week" 
+            />
+        </viz:feeds>
+      </viz:VizFrame>
+    </l:flexContent>
+  </l:FixFlex>
+</core:FragmentDefinition>

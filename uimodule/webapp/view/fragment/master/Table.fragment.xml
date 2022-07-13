@@ -7,6 +7,11 @@
   height="100%"
 >
   <VBox height="100%">
+    <SearchField 
+      class="sapUiSmallMargin" 
+      width="auto" 
+      liveChange=".onSearchFieldLiveChange"
+    />
     <List
       items="{
         path:'master>/table/data'
@@ -29,43 +34,64 @@
             </Toolbar>
           </headerToolbar>
           <content>
-            <HBox justifyContent="SpaceBetween" alignItems="Center">
+            <HBox justifyContent="SpaceBetween" alignItems="Start">
               <items>
-                <VBox alignItems="Center">
-                  <VBox class="sapUiTinyMarginBottom">
+                <VBox height="100%" justifyContent="SpaceBetween">
+                  <VBox>
                     <Title text="Total Agreements" />
-                    <chart:HarveyBallMicroChart size="S" total="100" totalScale="Mrd" colorPalette="sapUiChartPaletteQualitativeHue1" press="press">
-                      <chart:items>
-                        <chart:HarveyBallMicroChartItem fraction="20" fractionScale="Mrd"/>
-                      </chart:items>
-                    </chart:HarveyBallMicroChart>
+                    <NumericContent 
+                      class="sapUiSmallMarginTopBottom"
+                      value="125" 
+                      scale=""
+                      valueColor="Neutral" 
+                      indicator="None" 
+                    />
                   </VBox>
                   <VBox>
                     <Title text="Total Contracts" />
-                    <chart:HarveyBallMicroChart size="S" total="100" totalScale="Mrd" colorPalette="sapUiChartPaletteQualitativeHue1" press="press">
-                      <chart:items>
-                        <chart:HarveyBallMicroChartItem fraction="20" fractionScale="Mrd"/>
-                      </chart:items>
-                    </chart:HarveyBallMicroChart>
+                    <NumericContent 
+                      class="sapUiSmallMarginTopBottom"
+                      value="25" 
+                      scale=""
+                      valueColor="Neutral" 
+                      indicator="None" 
+                    />
                   </VBox>
                 </VBox>
                 <VBox>
-                  <Title text="Bid Total Amount" />
-                  <chart:BulletMicroChart 
-                    size="S" 
-                    scale="M" 
-                    class="sapUiSmallMargin" 
-                  >
-                    <chart:actual>
-                      <chart:BulletMicroChartData value="{master>bids/amount}" color="Good"/>
-                    </chart:actual>
-                    <chart:thresholds>
-                      <chart:BulletMicroChartData value="0" color="Error"/>
-                      <chart:BulletMicroChartData value="50" color="Critical"/>
-                      <chart:BulletMicroChartData value="150" color="Critical"/>
-                      <chart:BulletMicroChartData value="200" color="Error"/>
-                    </chart:thresholds>
-                  </chart:BulletMicroChart>
+                  <VBox>
+                    <Title text="Offers" />
+                    <chart:DeltaMicroChart 
+                      size="S" 
+                      value1="105" 
+                      value2="98"
+                      title1="Sep 2022" 
+                      title2="Jul 2022" 
+                      displayValue1="105 M" 
+                      displayValue2="98 M" 
+                      deltaDisplayValue="7 M" 
+                      color="Good" 
+                      class="sapUiSmallMargin"
+                    />
+                  </VBox>
+                  <VBox>
+                    <Title text="Bid Total Amount" />
+                    <chart:BulletMicroChart 
+                      size="S" 
+                      scale="M" 
+                      class="sapUiSmallMargin" 
+                    >
+                      <chart:actual>
+                        <chart:BulletMicroChartData value="{master>bids/amount}" color="Good"/>
+                      </chart:actual>
+                      <chart:thresholds>
+                        <chart:BulletMicroChartData value="0" color="Error"/>
+                        <chart:BulletMicroChartData value="50" color="Critical"/>
+                        <chart:BulletMicroChartData value="150" color="Critical"/>
+                        <chart:BulletMicroChartData value="200" color="Error"/>
+                      </chart:thresholds>
+                    </chart:BulletMicroChart>
+                  </VBox>
                 </VBox>
               </items>
             </HBox>

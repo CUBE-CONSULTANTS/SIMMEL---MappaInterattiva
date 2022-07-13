@@ -31,7 +31,6 @@ sap.ui.define(
 
             createMainModel: function() {
                 return new JSONModel({
-                    analyticMap: {},
                     table: {
                         data: []
                     }
@@ -47,6 +46,14 @@ sap.ui.define(
                         regions: {},
                         agreements: {},
                         contracts: {}
+                    },
+                    panel: {
+                        chart1: {
+                            data: []
+                        },
+                        chart2: {
+                            data: []
+                        }
                     },
                     detailsDialog: {
                         agreements: {

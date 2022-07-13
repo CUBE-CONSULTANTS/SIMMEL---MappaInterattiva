@@ -7,10 +7,12 @@
   xmlns:chart="sap.suite.ui.microchart"
 >
     <vk:MapContainer 
+      id="mapContainer"
       autoAdjustHeight="true"
       showFullScreen="false"
       showMapLayer="false"
       showRectangularZoom="false"
+      showHome="false"
       showSettings="false"
       showSelection="false"
     >
@@ -26,8 +28,7 @@
               height="100%" 
               initialPosition="5;35;0"
               enableAnimation="true"
-              regionClick="onRegionClick"
-              regionContextMenu="onRegionContextMenu"
+              regionClick=".onRegionClick"
               regions="{detail>/regions}"
             >
               <vbm:legend>
@@ -57,6 +58,7 @@
                     position="{detail>pos}" 
                     contentColor="rgb(0,0,0)"
                     tooltip="{detail>tooltip}" 
+                    text="{detail>country_description}"
                     type="{detail>type}"
                     click="onSpotClick" 
                     contextMenu="onContextMenuSpot"

@@ -25,6 +25,7 @@ sap.ui.define([
           const getContracts = async () => await testModel.loadData("../data/contracts.json");
           const getOffers = async () => await testModel.loadData("../data/offers.json");
           const getBID = async () => await testModel.loadData("../data/bid-nobid.json");
+          const getChart1 = async () => await testModel.loadData("../data/chart1.json");
 
           getData()
               .then(() => {
@@ -62,11 +63,17 @@ sap.ui.define([
                   this.getOwnerComponent().getModel("detail").setProperty("/offers", offers);
               })
 
-              getBID()
-                  .then(() => {
-                      const { bidnobid } = testModel.getData();
-                      this.getOwnerComponent().getModel("detail").setProperty("/bidnobid", bidnobid);
-                  })
+            getBID()
+                .then(() => {
+                    const { bidnobid } = testModel.getData();
+                    this.getOwnerComponent().getModel("detail").setProperty("/bidnobid", bidnobid);
+                })
+
+            getChart1()
+                .then(() => {
+                    const { milk } = testModel.getData();
+                    this.getOwnerComponent().getModel("detail").setProperty("/panel/chart1/data", milk);
+                })
         },
 
         _onRouteMatched: function(e) {
@@ -85,7 +92,8 @@ sap.ui.define([
             if( !e.getSource().getRegionMap()[sCode] ) {
               this.getModel("detail").setProperty("/selectedRegion", null);
               this.byId("detailsPanel").setExpanded(false);
-              this.byId("vbi1").setZoomlevel(0);
+              e.getSource().setCenterPosition("5;35;0");
+              e.getSource().setZoomlevel(1);
               return this.getRouter().navTo("master");
             }
             
@@ -96,13 +104,18 @@ sap.ui.define([
             //opens details panel
             this.byId("detailsPanel").setExpanded(true);
             //increases zoom level on selected region
-            e.getSource().zoomToRegions([sCode], null);
+            Object.values(e.getSource().getRegionMap()).forEach(el => {
+                if( el.getCode() === sCode ) el.setSelect(true);
+                else el.setSelect(false);
+            });
+            e.getSource().zoomToRegions([sCode]);
         },
 
         onSpotClick: function(e) {
             const oSource = e.getSource();
-            const { Action, Data } = e.getParameter("data");
             const oContext = oSource.getBindingContext("detail");
+
+            e.getSource().getParent().getParent().fireRegionClick({code: oContext.getProperty("country")});
 
             if( !this._oAgreementDetailsDialog ){
                 this._oAgreementDetailsDialog = Fragment.load({
@@ -116,8 +129,9 @@ sap.ui.define([
                         agreement: {},
                         contracts: {},
                         offers: {
-                            table: {},
-                            calendar: {}
+                            treeTable: {
+                                rows: {}
+                            }
                         },
                         bidnobid: {}
                     }), "detailsDialog");
@@ -134,8 +148,7 @@ sap.ui.define([
                 oDialog.getModel("detailsDialog").setProperty("/context", oContext.getObject());
                 oDialog.getModel("detailsDialog").setProperty("/agreement/items", aFilteredAgreement);
                 oDialog.getModel("detailsDialog").setProperty("/contracts/items", aFilteredContracts);
-                oDialog.getModel("detailsDialog").setProperty("/offers/table/items", aFilteredOffers);
-                oDialog.getModel("detailsDialog").setProperty("/offers/calendar/items", mapper.mapCalendarData(aFilteredOffers));
+                oDialog.getModel("detailsDialog").setProperty("/offers/treeTable/rows", mapper.mapTreeTableData(aFilteredOffers));
                 oDialog.getModel("detailsDialog").setProperty("/bidnobid/items", aFilteredBidnobid);
                 oDialog.open();
             })

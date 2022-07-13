@@ -1,124 +1,146 @@
 <core:FragmentDefinition
-	xmlns:core="sap.ui.core"
-	xmlns:unified="sap.ui.unified"
-	xmlns:m="sap.m"
-  xmlns="sap.ui.table"
+	xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:ui="sap.ui.table"
+  xmlns:l="sap.ui.layout"
+	xmlns:gnt2="sap.gantt.simple"
+  xmlns:axistime="sap.gantt.axistime"
+	xmlns:config="sap.gantt.config"
 >
-    <m:VBox>
-      <m:items>
-        <m:HBox class="sapUiTinyMargin">
-          <m:SegmentedButton 
-            width="auto" 
-            items="{detail>/detailsDialog/offers/segmentedButton/items}"
-            selectedKey="{detail>/detailsDialog/offers/segmentedButton/selectedKey}"
-          >
-            <m:items>
-              <m:SegmentedButtonItem width="100%" text="{detail>text}" key="{detail>key}" />
-            </m:items>
-          </m:SegmentedButton>
-        </m:HBox>
-        <Table
-          visible="{= ${detail>/detailsDialog/offers/segmentedButton/selectedKey} === 'table'}"
-          visibleRowCount="20"
-          selectionMode="None"
-          rows="{detailsDialog>/offers/table/items}"
+  <l:FixFlex minFlexSize="500">
+    <l:fixContent>
+      <ObjectHeader
+          title="Offer03"
+          number="965.00"
+          numberUnit="Eur"
         >
-          <columns>
-            <Column sortProperty="offer_number" filterProperty="offer_number">
-              <m:Label text="Offer Number" />
-              <template>
-                <m:Text text="{detailsDialog>offer_number}" />
-              </template>
-            </Column>
-            <Column sortProperty="pays" filterProperty="pays">
-              <m:Label text="Pays" />
-              <template>
-                <m:Text text="{detailsDialog>pays}" />
-              </template>
-            </Column>
-            <Column sortProperty="customer_name" filterProperty="customer_name">
-              <m:Label text="Customer Name" />
-              <template>
-                <m:Text text="{detailsDialog>customer_name}" />
-              </template>
-            </Column>
-            <Column sortProperty="offer_title" filterProperty="offer_title">
-              <m:Label text="Offer Title" />
-              <template>
-                <m:Text text="{detailsDialog>offer_title}" />
-              </template>
-            </Column>
-            <Column sortProperty="signature_date" filterProperty="signature_date">
-              <m:Label text="Signature Date" />
-              <template>
-                <m:Text text="{detailsDialog>signature_date}" />
-              </template>
-            </Column>
-            <Column sortProperty="amount" filterProperty="amount">
-              <m:Label text="Amount" />
-              <template>
-                <m:Text text="{detailsDialog>amount}" />
-              </template>
-            </Column>
-            <Column sortProperty="date" filterProperty="date">
-              <m:Label text="Date" />
-              <template>
-                <m:Text text="{
-                  path: 'detailsDialog>date',
-                  formatter: '.formatter.formatStandardDate'
-                }" />
-              </template>
-            </Column>
-            <Column sortProperty="commercial" filterProperty="commercial">
-              <m:Label text="Commercial" />
-              <template>
-                <m:Text text="{detailsDialog>commercial}" />
-              </template>
-            </Column>
-          </columns>
-        </Table>
-        <m:PlanningCalendar
-          visible="{= ${detail>/detailsDialog/offers/segmentedButton/selectedKey} === 'calendar'}"
-          viewKey="Week"
-          builtInViews="Week,OneMonth"
-          stickyHeader="true"
-          rows="{detailsDialog>/offers/calendar/items}"
-          showIntervalHeaders="false"
-          showEmptyIntervalHeaders="false"
-          appointmentsVisualization="Filled"
-          appointmentHeight="Regular"
-          showDayNamesLine="true"
-          appointmentSelect=".onAppointmentPress"
-          startDateChange=".onStartDateChange"
+          <attributes>
+            <ObjectAttribute text="Customer Name: Stefano Bianchi" />
+            <ObjectAttribute text="Commercial: " />
+            <ObjectAttribute text="Pays: " />
+          </attributes>
+          <statuses>
+            <ObjectStatus
+              text="Expired"
+              state="Error" 
+            />
+          </statuses>
+        </ObjectHeader>     
+    </l:fixContent>
+    <l:flexContent>
+      <gnt2:GanttChartContainer 
+        id="container"
+        height="100%"
+        enableTimeScrollSync="true"
+      >
+        <gnt2:toolbar>
+          <gnt2:ContainerToolbar 
+            id="toolbar" 
+            design="Auto" 
+            showBirdEyeButton="false" 
+            showLegendButton="false" 
+            showSearchButton="true"
+          />
+        </gnt2:toolbar>
+
+        <gnt2:GanttChartWithTable 
+          id="FreightOrderAndFreightUnit" 
+          ghostAlignment="Start" 
+          adhocLineLayer="Bottom"
+          shapeSelectionMode = "Single"
+          selectionPanelSize="50%"
+          enableChartOverflowToolbar="true"
+          shapeSelectionSettings="{color:'red', strokeDasharray:'1,0'}"
+          shapeDrop="onShapeDrop"
+          shapeDoubleClick="onShapeDoubleClick"
         >
-          <m:rows>
-            <m:PlanningCalendarRow
-              title="{detailsDialog>customer_name}"
-              enableAppointmentsDragAndDrop="false"
-              enableAppointmentsResize="false"
-              enableAppointmentsCreate="false"
-              appointments="{
-                path: 'detailsDialog>offers',
-                templateShareable: false
+
+          <gnt2:table>
+            <ui:TreeTable
+              selectionMode="Single"
+              visibleRowCountMode="Auto"
+              selectionBehavior="RowSelector"
+              rows="{
+                path: 'detailsDialog>/offers/treeTable/rows',
+                parameters: {
+                  arrayNames: ['rows']
+                }
               }"
             >
-              <m:appointments>
-                <unified:CalendarAppointment
-                  startDate="{
-                    path: 'detailsDialog>date',
-                    formatter: '.formatter.formatStartDate'
-                  }"
-                  endDate="{
-                    path: 'detailsDialog>date',
-                    formatter: '.formatter.formatEndDate'
-                  }"
-                  title="{detailsDialog>offer_title}"
-                  text="{detailsDialog>pays}"
-                />
-              </m:appointments>
-            </m:PlanningCalendarRow>
-          </m:rows>
-        </m:PlanningCalendar>
-      </m:items>
-    </m:VBox>
+              <ui:columns>
+                <ui:Column sortProperty="RequirementID" filterProperty="RequirementID">
+                  <Text text="Customer Name" wrapping="false"/>
+                  <ui:template>
+                    <HBox>
+                      <items>
+                        <Label text="{detailsDialog>name}"/>
+                      </items>
+                    </HBox>
+                  </ui:template>
+                </ui:Column>
+                <ui:Column sortProperty="RequirementID" filterProperty="RequirementID">
+                  <Text text="Start Date" wrapping="false"/>
+                  <ui:template>
+                    <HBox>
+                      <items>
+                        <Label text="{
+                          path: 'detailsDialog>startDate',
+                          formatter: '.formatter.formatStandardDate'
+                        }"/>
+                      </items>
+                    </HBox>
+                  </ui:template>
+                </ui:Column>
+                <ui:Column sortProperty="RequirementID" filterProperty="RequirementID">
+                  <Text text="End Date" wrapping="false"/>
+                  <ui:template>
+                    <HBox>
+                      <items>
+                        <Label text="{
+                          path: 'detailsDialog>endDate',
+                          formatter: '.formatter.formatStandardDate'
+                        }"/>
+                      </items>
+                    </HBox>
+                  </ui:template>
+                </ui:Column>
+              </ui:columns>
+              <ui:rowSettingsTemplate>
+                <gnt2:GanttRowSettings 
+                  rowId="{detailsDialog>name}"
+                >
+                  <gnt2:shapes1>
+                    <gnt2:BaseRectangle
+                      shapeId="{detailsDialog>offer_number}" 
+                      countInBirdEye="true"
+                      time="{detailsDialog>startDate}" 
+                      endTime="{detailsDialog>endDate}"
+                      resizable="false" 
+                      selectable="true" 
+                      draggable= "true"
+                      title="{detailsDialog>name}" 
+                      showTitle="true"
+                      tooltip="{detailsDialog>name}"
+                      fill="green"
+                    />
+                  </gnt2:shapes1>
+                </gnt2:GanttRowSettings>
+              </ui:rowSettingsTemplate>
+            </ui:TreeTable>
+          </gnt2:table>
+
+          <gnt2:axisTimeStrategy>
+            <axistime:ProportionZoomStrategy>
+              <axistime:totalHorizon>
+                <config:TimeHorizon startTime="20220101000000" endTime="20221201000000"/>
+              </axistime:totalHorizon>
+              <axistime:visibleHorizon>
+                <config:TimeHorizon startTime="20220701000000" endTime="20220801000000"/>
+              </axistime:visibleHorizon>
+            </axistime:ProportionZoomStrategy>
+          </gnt2:axisTimeStrategy>
+        </gnt2:GanttChartWithTable>
+      </gnt2:GanttChartContainer>
+    </l:flexContent>
+  </l:FixFlex>
 </core:FragmentDefinition>
