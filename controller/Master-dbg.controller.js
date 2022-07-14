@@ -13,6 +13,7 @@ sap.ui.define([
 
         return BaseController.extend("simmel.mappaInterattiva.controller.Master", {
 
+            //modifica fittizia
             onInit: function () {
                 this.getRouter().getRoute("master").attachPatternMatched(this._onRouteMatched, this);
             },
