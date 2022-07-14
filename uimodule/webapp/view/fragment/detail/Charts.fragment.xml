@@ -6,7 +6,7 @@
   xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
   xmlns:viz.data="sap.viz.ui5.data"
 >
-  <l:FixFlex minFlexSize="400">
+  <l:FixFlex minFlexSize="300">
     <l:fixContent>
       <VBox alignItems="End">
         <Select id="idoSelect1" change="handleSelectionChange">

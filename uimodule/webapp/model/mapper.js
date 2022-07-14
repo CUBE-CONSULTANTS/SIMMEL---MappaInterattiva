@@ -11,6 +11,7 @@ sap.ui.define([
                 "name": el.customer_name,
                 "rows": aData.filter(item => item.customer_name === el.customer_name).map(mapItem => {
                   return {
+                    "customer_name": mapItem.customer_name,
                     "offer_number": mapItem.offer_number,
                     "country": mapItem.country,
                     "pays": mapItem.pays,

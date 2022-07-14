@@ -10,17 +10,20 @@
   <l:FixFlex minFlexSize="500">
     <l:fixContent>
       <ObjectHeader
-          title="Offer03"
-          number="965.00"
+          visible="{= ${detailsDialog>/offers/panel/selectedOffer} ? true : false }"
+          icon="sap-icon://customer-financial-fact-sheet"
+          title="{detailsDialog>/offers/panel/selectedOffer/name}"
+          number="{detailsDialog>/offers/panel/selectedOffer/amount}"
           numberUnit="Eur"
         >
           <attributes>
-            <ObjectAttribute text="Customer Name: Stefano Bianchi" />
-            <ObjectAttribute text="Commercial: " />
-            <ObjectAttribute text="Pays: " />
+            <ObjectAttribute text="Customer Name: {detailsDialog>/offers/panel/selectedOffer/customer_name}" />
+            <ObjectAttribute text="Commercial: {detailsDialog>/offers/panel/selectedOffer/commercial}" />
+            <ObjectAttribute text="Pays: {detailsDialog>/offers/panel/selectedOffer/pays}" />
           </attributes>
           <statuses>
             <ObjectStatus
+              visible="{= ${detailsDialog>/offers/panel/selectedOffer} ? true : false }"
               text="Expired"
               state="Error" 
             />
@@ -29,37 +32,36 @@
     </l:fixContent>
     <l:flexContent>
       <gnt2:GanttChartContainer 
-        id="container"
+        width="100%"
         height="100%"
         enableTimeScrollSync="true"
       >
         <gnt2:toolbar>
           <gnt2:ContainerToolbar 
-            id="toolbar" 
             design="Auto" 
+            showSettingButton="false"
             showBirdEyeButton="false" 
+            showDisplayTypeButton="false"
             showLegendButton="false" 
-            showSearchButton="true"
+            showSearchButton="false"
           />
         </gnt2:toolbar>
 
         <gnt2:GanttChartWithTable 
-          id="FreightOrderAndFreightUnit" 
+          width="100%"
+          height="100%"
           ghostAlignment="Start" 
           adhocLineLayer="Bottom"
           shapeSelectionMode = "Single"
           selectionPanelSize="50%"
           enableChartOverflowToolbar="true"
           shapeSelectionSettings="{color:'red', strokeDasharray:'1,0'}"
-          shapeDrop="onShapeDrop"
-          shapeDoubleClick="onShapeDoubleClick"
+          shapePress=".onGanttChartShapePress"
         >
-
           <gnt2:table>
             <ui:TreeTable
-              selectionMode="Single"
+              selectionMode="None"
               visibleRowCountMode="Auto"
-              selectionBehavior="RowSelector"
               rows="{
                 path: 'detailsDialog>/offers/treeTable/rows',
                 parameters: {
@@ -107,7 +109,7 @@
               </ui:columns>
               <ui:rowSettingsTemplate>
                 <gnt2:GanttRowSettings 
-                  rowId="{detailsDialog>name}"
+                  rowId="{detailsDialog>offer_number}"
                 >
                   <gnt2:shapes1>
                     <gnt2:BaseRectangle

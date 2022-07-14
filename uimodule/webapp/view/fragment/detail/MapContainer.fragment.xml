@@ -58,7 +58,7 @@
                     position="{detail>pos}" 
                     contentColor="rgb(0,0,0)"
                     tooltip="{detail>tooltip}" 
-                    text="{detail>country_description}"
+                    text="{detail>text}"
                     type="{detail>type}"
                     click="onSpotClick" 
                     contextMenu="onContextMenuSpot"

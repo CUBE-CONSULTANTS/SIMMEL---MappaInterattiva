@@ -63,13 +63,7 @@ sap.ui.define(
 
                         },
                         offers: {
-                            segmentedButton: {
-                                items: [
-                                    { key: "table", text: "Table" },
-                                    { key: "calendar", text: "Calendar" } 
-                                ],
-                                selectedKey: "table"
-                            }
+
                         },
                         bidnobid: {
 

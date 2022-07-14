@@ -93,7 +93,7 @@ sap.ui.define([
               this.getModel("detail").setProperty("/selectedRegion", null);
               this.byId("detailsPanel").setExpanded(false);
               e.getSource().setCenterPosition("5;35;0");
-              e.getSource().setZoomlevel(1);
+              e.getSource().setZoomlevel(2);
               return this.getRouter().navTo("master");
             }
             
@@ -129,6 +129,9 @@ sap.ui.define([
                         agreement: {},
                         contracts: {},
                         offers: {
+                            panel: {
+                                selectedOffer: null
+                            },
                             treeTable: {
                                 rows: {}
                             }
@@ -145,6 +148,7 @@ sap.ui.define([
                 const aFilteredOffers = this.getModel("detail").getProperty("/offers").filter(el => el.country === oContext.getProperty("country"));
                 const aFilteredBidnobid = this.getModel("detail").getProperty("/bidnobid").filter(el => el.country === oContext.getProperty("country"));
 
+                oDialog.getContent()[0].getItems()[0].setSelectedKey("agreement");
                 oDialog.getModel("detailsDialog").setProperty("/context", oContext.getObject());
                 oDialog.getModel("detailsDialog").setProperty("/agreement/items", aFilteredAgreement);
                 oDialog.getModel("detailsDialog").setProperty("/contracts/items", aFilteredContracts);
@@ -181,6 +185,16 @@ sap.ui.define([
         onContactsButtonPress: function(e) {
             const oContext = e.getSource().getBindingContext("detailsDialog");
             this._getContactsDetailsDialog(oContext);
+        },
+
+        // GANTT CHART
+
+        onGanttChartShapePress: function(e) {
+            const oShape = e.getParameter("shape");
+            const oContext = oShape.getBindingContext("detailsDialog");
+            const oModel = oShape.getBindingContext("detailsDialog").getModel();
+
+            oModel.setProperty("/offers/panel/selectedOffer", oContext.getObject());
         }
 
       });

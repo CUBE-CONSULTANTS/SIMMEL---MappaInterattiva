@@ -67,6 +67,21 @@ sap.ui.define(
             },
 
             onDefaultDialogClose: function(e) {
+                if( e.getSource().getParent().getModel("detailsDialog") ){
+                    e.getSource().getParent().getModel("detailsDialog").setData({
+                        agreement: {},
+                        contracts: {},
+                        offers: {
+                            panel: {
+                                selectedOffer: null
+                            },
+                            treeTable: {
+                                rows: {}
+                            }
+                        },
+                        bidnobid: {}
+                    });
+                }
                 e.getSource().getParent().close();
             }
         });
