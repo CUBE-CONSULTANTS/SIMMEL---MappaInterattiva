@@ -18,14 +18,14 @@ sap.ui.define([
         _initDetailData: function() {
           const testModel = new JSONModel();
 
-          const getData = async () => await testModel.loadData("../data/data.json");
-          const getLegend = async () => await testModel.loadData("../data/legend.json");
-          const getRegions = async () => await testModel.loadData("../data/regions.json");
-          const getAgreements = async () => await testModel.loadData("../data/agreement.json");
-          const getContracts = async () => await testModel.loadData("../data/contracts.json");
-          const getOffers = async () => await testModel.loadData("../data/offers.json");
-          const getBID = async () => await testModel.loadData("../data/bid-nobid.json");
-          const getChart1 = async () => await testModel.loadData("../data/chart1.json");
+          const getData = async () => await testModel.loadData("./data/data.json");
+          const getLegend = async () => await testModel.loadData("./data/legend.json");
+          const getRegions = async () => await testModel.loadData("./data/regions.json");
+          const getAgreements = async () => await testModel.loadData("./data/agreement.json");
+          const getContracts = async () => await testModel.loadData("./data/contracts.json");
+          const getOffers = async () => await testModel.loadData("./data/offers.json");
+          const getBID = async () => await testModel.loadData("./data/bid-nobid.json");
+          const getChart1 = async () => await testModel.loadData("./data/chart1.json");
 
           getData()
               .then(() => {
