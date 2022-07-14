@@ -21,7 +21,7 @@ sap.ui.define([
             _initMasterData: function() {
                 const testModel = new JSONModel();
 
-                const getRegions = async () => await testModel.loadData("../data/regions.json");
+                const getRegions = async () => await testModel.loadData("./data/regions.json");
 
                 getRegions()
                     .then(() => {
