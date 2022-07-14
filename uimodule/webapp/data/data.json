@@ -5,46 +5,46 @@
 				"pos": "-58.5733832;-34.6157437;11",
 				"country": "AR",
 				"country_description": "Argentina",
-				"tooltip": "Buenos Aires",
+				"tooltip": "\nAgreements (100)\nContracts (86)\nOffers (78)\nBID/NO BID (65)",
 				"type": "Default",
 				"icon": "sap-icon://overlay",
-				"text": "100"
+				"text": "329"
 			},
 			{
 				"pos": "-48.3575573;-15.7738667;9",
 				"country": "BR",
 				"country_description": "Brazil",
-				"tooltip": "Brasilia",
+				"tooltip": "\nAgreements (20)\nContracts (33)\nOffers (11)\nBID/NO BID (99)",
 				"type": "Default",
 				"icon": "sap-icon://overlay",
-				"text": "123"
+				"text": "163"
 			},
 			{
 				"pos": "-70.7699137;-33.4724228;11",
 				"country": "CL",
 				"country_description": "Chile",
-				"tooltip": "Santiago",
+				"tooltip": "\nAgreements (1)\nContracts (13)\nOffers (28)\nBID/NO BID (54)",
 				"type": "Default",
 				"icon": "sap-icon://overlay",
-				"text": "87"
+				"text": "96"
 			},
 			{
 				"pos": "-74.2478915;4.6486259;11",
 				"country": "CO",
 				"country_description": "Colombia",
-				"tooltip": "Bogotà",
+				"tooltip": "\nAgreements (21)\nContracts (5)\nOffers (3)\nBID/NO BID (7)",
 				"type": "Default",
 				"icon": "sap-icon://overlay",
-				"text": "65"
+				"text": "38"
 			},
 			{
 				"pos": "-3.8196189;40.4378698;11",
 				"country": "SP",
 				"country_description": "Spain",
-				"tooltip": "Madrid",
+				"tooltip": "\nAgreements (9)\nContracts (23)\nOffers (65)\nBID/NO BID (11)",
 				"type": "Default",
 				"icon": "sap-icon://overlay",
-				"text": "11"
+				"text": "108"
 			}
 		]
 }

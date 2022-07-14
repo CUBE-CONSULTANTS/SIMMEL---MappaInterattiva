@@ -158,6 +158,51 @@ sap.ui.define([
             })
         },
 
+        onGoToDetailsPress: function(e) {
+            const oContext = this.getModel("detail").getProperty("/selectedRegion");
+            const { country_code } = oContext;
+
+            if( !this._oAgreementDetailsDialog ){
+                this._oAgreementDetailsDialog = Fragment.load({
+                    id: this.getView().getId(),
+                    name: "simmel.mappaInterattiva.view.fragment.detail.DetailsDialog",
+                    type: "XML",
+                    controller: this
+                }).then(oDialog => {
+                    this.getView().addDependent(oDialog);
+                    oDialog.setModel(new JSONModel({
+                        agreement: {},
+                        contracts: {},
+                        offers: {
+                            panel: {
+                                selectedOffer: null
+                            },
+                            treeTable: {
+                                rows: {}
+                            }
+                        },
+                        bidnobid: {}
+                    }), "detailsDialog");
+                    return oDialog;
+                });
+            }
+
+            this._oAgreementDetailsDialog.then(oDialog => {
+                const aFilteredAgreement = this.getModel("detail").getProperty("/agreements").filter(el => el.country === country_code);
+                const aFilteredContracts = this.getModel("detail").getProperty("/contracts").filter(el => el.country === country_code);
+                const aFilteredOffers = this.getModel("detail").getProperty("/offers").filter(el => el.country === country_code);
+                const aFilteredBidnobid = this.getModel("detail").getProperty("/bidnobid").filter(el => el.country === country_code);
+
+                oDialog.getContent()[0].getItems()[0].setSelectedKey("agreement");
+                oDialog.getModel("detailsDialog").setProperty("/context", oContext);
+                oDialog.getModel("detailsDialog").setProperty("/agreement/items", aFilteredAgreement);
+                oDialog.getModel("detailsDialog").setProperty("/contracts/items", aFilteredContracts);
+                oDialog.getModel("detailsDialog").setProperty("/offers/treeTable/rows", mapper.mapTreeTableData(aFilteredOffers));
+                oDialog.getModel("detailsDialog").setProperty("/bidnobid/items", aFilteredBidnobid);
+                oDialog.open();
+            })
+        },
+
         // Dialog Init //
 
         _getContactsDetailsDialog: function(oContext) {

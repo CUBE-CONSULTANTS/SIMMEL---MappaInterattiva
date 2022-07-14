@@ -5,6 +5,7 @@
 	xmlns:vk="sap.ui.vk"
 	xmlns:vbm="sap.ui.vbm"
   xmlns:chart="sap.suite.ui.microchart"
+  xmlns:commons="sap.ui.commons"
 >
     <vk:MapContainer 
       id="mapContainer"
@@ -45,24 +46,25 @@
                   code="{detail>country_code}" 
                   color="{detail>color}" 
                   tooltip="{detail>country_name}"
-                />
+                >
+                </vbm:Region>
               </vbm:regions>
               <vbm:vos>
                 <vbm:Spots 
                   items="{detail>/data}" 
-                  click="onClickItem"
-                  contextMenu="onContextMenuItem"
                 >
-                  <vbm:Spot 
-                    icon="{detail>icon}"
-                    position="{detail>pos}" 
-                    contentColor="rgb(0,0,0)"
-                    tooltip="{detail>tooltip}" 
-                    text="{detail>text}"
-                    type="{detail>type}"
-                    click="onSpotClick" 
-                    contextMenu="onContextMenuSpot"
-                  />
+                  <vbm:items>
+                    <vbm:Spot 
+                      icon="{detail>icon}"
+                      position="{detail>pos}"
+                      tooltip="{detail>tooltip}"
+                      contentColor="rgb(0,0,0)"
+                      text="{detail>text}"
+                      type="{detail>type}"
+                      click="onSpotClick" 
+                      contextMenu="onContextMenuSpot"
+                    />
+                  </vbm:items>
                 </vbm:Spots>
               </vbm:vos>
             </vbm:AnalyticMap>

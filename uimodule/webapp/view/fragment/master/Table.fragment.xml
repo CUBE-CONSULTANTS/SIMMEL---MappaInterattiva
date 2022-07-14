@@ -28,7 +28,7 @@
         >
           <headerToolbar>
             <Toolbar>
-              <Title text="{master>country_name}"/>
+              <Title text="{master>country_description}"/>
               <ToolbarSpacer />
               <Image width="30px" src="{master>image_path}" />
             </Toolbar>
