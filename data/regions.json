@@ -3,7 +3,7 @@
     {
       "country_code": "AL",
       "color": "rgb(0,81,255)",
-      "country_name": "Albania",
+      "country_description": "Albania",
       "image_path": "./public/image/AL.png",
       "bids": {
         "amount": 123000
@@ -16,7 +16,7 @@
     {
       "country_code": "AR",
       "color": "rgb(227,216,0)",
-      "country_name": "Argentina",
+      "country_description": "Argentina",
       "image_path": "./public/image/AR.png",
       "bids": {
         "amount": 110000000
@@ -29,7 +29,7 @@
     {
       "country_code": "AU",
       "color": "rgb(255,81,0)",
-      "country_name": "Australia",
+      "country_description": "Australia",
       "image_path": "./public/image/AU.png",
       "bids": {
         "amount": 8200500
@@ -42,7 +42,7 @@
     {
       "country_code": "BD",
       "color": "rgb(81,255,0)",
-      "country_name": "Bangladesh",
+      "country_description": "Bangladesh",
       "image_path": "./public/image/BD.png",
       "bids": {
         "amount": 289764
@@ -55,7 +55,7 @@
     {
       "country_code": "BR",
       "color": "rgb(227,216,0)",
-      "country_name": "Brazil",
+      "country_description": "Brazil",
       "image_path": "./public/image/BR.png",
       "bids": {
         "amount": 12023864
@@ -68,7 +68,7 @@
     {
       "country_code": "CL",
       "color": "rgb(227,216,0)",
-      "country_name": "Chile",
+      "country_description": "Chile",
       "image_path": "./public/image/CL.png",
       "bids": {
         "amount": 123000
@@ -81,7 +81,7 @@
     {
       "country_code": "CO",
       "color": "rgb(227,216,0)",
-      "country_name": "Colombia",
+      "country_description": "Colombia",
       "image_path": "./public/image/CO.png",
       "bids": {
         "amount": 123000
@@ -94,181 +94,181 @@
     {
       "country_code": "CI",
       "color": "rgb(255,0,0)",
-      "country_name": "Ivory Coast",
+      "country_description": "Ivory Coast",
       "image_path": "./public/image/CI.png"
     },
     {
       "country_code": "HR",
       "color": "rgb(0,81,255)",
-      "country_name": "Croatia",
+      "country_description": "Croatia",
       "image_path": "./public/image/HR.png"
     },
     {
       "country_code": "EG",
       "color": "rgb(255,0,0)",
-      "country_name": "Egypt",
+      "country_description": "Egypt",
       "image_path": "./public/image/EG.png"
     },
     {
       "country_code": "PH",
       "color": "rgb(0,255,0)",
-      "country_name": "Philippines",
+      "country_description": "Philippines",
       "image_path": "./public/image/PH.png"
     },
     {
       "country_code": "JO",
       "color": "rgb(153,64,0)",
-      "country_name": "Jordan",
+      "country_description": "Jordan",
       "image_path": "./public/image/JO.png"
     },
     {
       "country_code": "GR",
       "color": "rgb(0,81,255)",
-      "country_name": "Greece",
+      "country_description": "Greece",
       "image_path": "./public/image/GR.png"
     },
     {
       "country_code": "IN",
       "color": "rgb(81,255,0)",
-      "country_name": "India",
+      "country_description": "India",
       "image_path": "./public/image/IN.png"
     },
     {
       "country_code": "IE",
       "color": "rgb(0,81,255)",
-      "country_name": "Ireland",
+      "country_description": "Ireland",
       "image_path": "./public/image/IE.png"
     },
     {
       "country_code": "IL",
       "color": "rgb(153,64,0)",
-      "country_name": "Israel",
+      "country_description": "Israel",
       "image_path": "./public/image/IL.png"
     },
     {
       "country_code": "KE",
       "color": "rgb(255,0,0)",
-      "country_name": "Kenya",
+      "country_description": "Kenya",
       "image_path": "./public/image/KE.png"
     },
     {
       "country_code": "KR",
       "color": "rgb(47,255,0)",
-      "country_name": "South Korea",
+      "country_description": "South Korea",
       "image_path": "./public/image/KR.png"
     },
     {
       "country_code": "KW",
       "color": "rgb(153,64,0)",
-      "country_name": "Kuwait",
+      "country_description": "Kuwait",
       "image_path": "./public/image/KW.png"
     },
     {
       "country_code": "LB",
       "color": "rgb(153,64,0)",
-      "country_name": "Lebanon",
+      "country_description": "Lebanon",
       "image_path": "./public/image/LB.png"
     },
     {
       "country_code": "LT",
       "color": "rgb(0,81,255)",
-      "country_name": "Lithuania",
+      "country_description": "Lithuania",
       "image_path": "./public/image/LT.png"
     },
     {
       "country_code": "LU",
       "color": "rgb(0,81,255)",
-      "country_name": "Luxembourg",
+      "country_description": "Luxembourg",
       "image_path": "./public/image/LU.png"
     },
     {
       "country_code": "MY",
       "color": "rgb(81,255,0)",
-      "country_name": "Malaysia",
+      "country_description": "Malaysia",
       "image_path": "./public/image/MY.png"
     },
     {
       "country_code": "MA",
       "color": "rgb(255,0,0)",
-      "country_name": "Morocco",
+      "country_description": "Morocco",
       "image_path": "./public/image/MA.png"
     },
     {
       "country_code": "NL",
       "color": "rgb(0,81,255)",
-      "country_name": "Netherlands",
+      "country_description": "Netherlands",
       "image_path": "./public/image/NL.png"
     },
     {
       "country_code": "PL",
       "color": "rgb(0,81,255)",
-      "country_name": "Poland",
+      "country_description": "Poland",
       "image_path": "./public/image/PL.png"
     },
     {
       "country_code": "PT",
       "color": "rgb(0,81,255)",
-      "country_name": "Portugal",
+      "country_description": "Portugal",
       "image_path": "./public/image/PT.png"
     },
     {
       "country_code": "SN",
       "color": "rgb(255,0,0)",
-      "country_name": "Senegal",
+      "country_description": "Senegal",
       "image_path": "./public/image/SN.png"
     },
     {
       "country_code": "SG",
       "color": "rgb(255,81,0)",
-      "country_name": "Singapore",
+      "country_description": "Singapore",
       "image_path": "./public/image/SG.png"
     },
     {
       "country_code": "SI",
       "color": "rgb(0,81,255)",
-      "country_name": "Slovenia",
+      "country_description": "Slovenia",
       "image_path": "./public/image/SI.png"
     },
     {
       "country_code": "ES",
       "color": "rgb(0,81,255)",
-      "country_name": "Spain",
+      "country_description": "Spain",
       "image_path": "./public/image/ES.png"
     },
     {
       "country_code": "CN",
       "color": "rgb(81,255,0)",
-      "country_name": "China",
+      "country_description": "China",
       "image_path": "./public/image/CN.png"
     },
     {
       "country_code": "TH",
       "color": "rgb(81,255,0)",
-      "country_name": "Thailand",
+      "country_description": "Thailand",
       "image_path": "./public/image/TH.png"
     },
     {
       "country_code": "TG",
       "color": "rgb(255,0,0)",
-      "country_name": "Togo",
+      "country_description": "Togo",
       "image_path": "./public/image/TG.png"
     },
     {
       "country_code": "TR",
       "color": "rgb(0,81,255)",
-      "country_name": "Turkey",
+      "country_description": "Turkey",
       "image_path": "./public/image/TR.png"
     },
     {
       "country_code": "VN",
       "color": "rgb(81,255,0)",
-      "country_name": "Vietnam",
+      "country_description": "Vietnam",
       "image_path": "./public/image/VN.png"
     },
     {
       "country_code": "DK",
       "color": "rgb(0,81,255)",
-      "country_name": "Denmark",
+      "country_description": "Denmark",
       "image_path": "./public/image/DK.png"
     }
   ]

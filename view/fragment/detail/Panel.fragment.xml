@@ -11,7 +11,13 @@
   >
     <headerToolbar>
       <Toolbar>
-        <Title text="{detail>/selectedRegion/country_name}" />
+        <Title text="{detail>/selectedRegion/country_description}" />
+        <Button 
+          text="Details" 
+          type="Emphasized"
+          visible="{= ${detail>/selectedRegion} ? true : false }"
+          press=".onGoToDetailsPress" 
+        />
         <ToolbarSpacer />
         <Image width="30px" src="{detail>/selectedRegion/image_path}" />
       </Toolbar>
