@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:u="sap.ui.unified"
+>
+  <Popover
+    showHeader="false"
+  >
+    <content>
+      <List>
+        <items>
+          <StandardListItem 
+            type="Active"
+            icon="sap-icon://add"
+            title="Add New" 
+            press=".onAddRowPress"
+          />
+          <StandardListItem 
+            visible="{= ${addData>/selectedIconTabKey} === 'offers' ? true : false }"
+            type="Active"
+            icon="sap-icon://add"
+            title="Add to Existing Row" 
+            press=".onAddToExistingRowPress"
+          />
+          <StandardListItem
+            type="Active" 
+            icon="sap-icon://upload"
+            title="Upload File" 
+            press=".onAddAttachmentPress" 
+          />
+        </items>
+      </List>
+    </content>
+  </Popover>
+</core:FragmentDefinition>

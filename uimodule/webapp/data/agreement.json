@@ -1,6 +1,7 @@
 {
   "agreements": [
     {
+      "input_editable": false,
       "country": "AR",
       "agency": "Agency01",
       "agent": "Agent01",
@@ -16,6 +17,7 @@
       "products_list": []
     },
     {
+      "input_editable": false,
       "country": "AR",
       "agency": "Agency02",
       "agent": "Agent02",
@@ -31,6 +33,7 @@
       "products_list": []
     },
     {
+      "input_editable": false,
       "country": "BR",
       "agency": "Agency03",
       "agent": "Agent03",
@@ -46,6 +49,7 @@
       "products_list": []
     },
     {
+      "input_editable": false,
       "country": "BR",
       "agency": "Agency04",
       "agent": "Agent04",

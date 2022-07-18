@@ -11,15 +11,15 @@
     <content>
       <VBox class="sapUiSmallMargin">
         <Label text="Address" />
-        <Text text="{contactsDialog>/address}" />
+        <Input editable="{contactsDialog>/input_editable}" value="{contactsDialog>/contacts/address}" />
       </VBox>
       <VBox class="sapUiSmallMargin">
         <Label text="Phone" />
-        <Text text="{contactsDialog>/phone}" />
+        <Input editable="{contactsDialog>/input_editable}" value="{contactsDialog>/contacts/phone}" />
       </VBox>
       <VBox class="sapUiSmallMargin">
         <Label text="Email" />
-        <Text text="{contactsDialog>/email}" />
+        <Input editable="{contactsDialog>/input_editable}" value="{contactsDialog>/contacts/email}" />
       </VBox>
     </content>
   </Dialog>

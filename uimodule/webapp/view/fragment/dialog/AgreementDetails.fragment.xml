@@ -5,21 +5,24 @@
 >
   <m:VBox>
     <Table
-        visibleRowCount="20"
+      visibleRowCount="14"
         selectionMode="None"
         rows="{detailsDialog>/agreement/items}"
       >
+        <toolbar>
+          <core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.dialog.TableActions" type="XML" />
+        </toolbar>
         <columns>
           <Column sortProperty="agency" filterProperty="agency">
             <m:Label text="Agency" />
             <template>
-              <m:Text text="{detailsDialog>agency}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>agency}" />
             </template>
           </Column>
           <Column sortProperty="agent" filterProperty="agent">
             <m:Label text="Agent" />
             <template>
-              <m:Text text="{detailsDialog>agent}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>agent}" />
             </template>
           </Column>
           <Column hAlign="Center" sortProperty="contacts" filterProperty="contacts">
@@ -31,7 +34,7 @@
           <Column sortProperty="start_date" filterProperty="start_date">
             <m:Label text="Start Date" />
             <template>
-              <m:Text text="{
+              <m:Input editable="{detailsDialog>input_editable}" value="{
                 path: 'detailsDialog>start_date', 
                 formatter: '.formatter.formatStandardDate'
               }" />
@@ -40,25 +43,25 @@
           <Column sortProperty="sign" filterProperty="sign">
             <m:Label text="Sign" />
             <template>
-              <m:Text text="{detailsDialog>sign}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>sign}" />
             </template>
           </Column>
           <Column sortProperty="sales_referent" filterProperty="sales_referent">
             <m:Label text="Sales Referent" />
             <template>
-              <m:Text text="{detailsDialog>sales_referent}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>sales_referent}" />
             </template>
           </Column>
           <Column sortProperty="contact_sales" filterProperty="contact_sales">
             <m:Label text="Contact Sales" />
             <template>
-              <m:Text text="{detailsDialog>contact_sales}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>contact_sales}" />
             </template>
           </Column>
           <Column sortProperty="products_list" filterProperty="products_list">
             <m:Label text="Products List" />
             <template>
-              <m:Text text="{detailsDialog>products_list}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>products_list}" />
             </template>
           </Column>
         </columns>

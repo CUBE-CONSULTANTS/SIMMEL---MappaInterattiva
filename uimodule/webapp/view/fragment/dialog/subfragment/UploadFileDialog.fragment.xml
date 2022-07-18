@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:u="sap.ui.unified"
+>
+  <Dialog
+    title="Upload File"
+  >
+    <buttons>
+      <Button text="Confirm" press=".onUploadFileDialogConfirmPress"/>
+      <Button text="Cancel" press=".onDefaultDialogClose"/>
+    </buttons>
+    <content>
+      <u:FileUploader
+        class="sapUiSmallMargin"
+        name="myFileUpload"
+        uploadUrl="upload/"
+        tooltip="Upload your file to the local server"
+        uploadComplete="handleUploadComplete"
+      />
+    </content>
+  </Dialog>
+</core:FragmentDefinition>

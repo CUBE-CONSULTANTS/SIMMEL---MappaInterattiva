@@ -6,13 +6,6 @@
     stretch="true"
     title="{detailsDialog>/context/country_description}"
   >
-    <subHeader>
-      <OverflowToolbar>
-        <ToolbarSpacer />
-        <Button text="Import Excel" icon="sap-icon://upload" />
-        <Button text="Export Excel" icon="sap-icon://download" />
-      </OverflowToolbar>
-    </subHeader>
     <content>
       <VBox>
         <IconTabBar
@@ -20,6 +13,7 @@
             backgroundDesign="Transparent"
             applyContentPadding="true"
             expanded="{device>/isNoPhone}"
+            select=".onIconTabSelect"
         >
             <items>
                 <IconTabFilter text="Agreement" key="agreement">
