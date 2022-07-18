@@ -9,6 +9,9 @@
         selectionMode="None"
         rows="{detailsDialog>/bidnobid/items}"
       >
+        <toolbar>
+          <core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.dialog.TableActions" type="XML" />
+        </toolbar>
         <columns>
           <Column sortProperty="bidnobid_number" filterProperty="bidnobid_number">
             <m:Label text="BID Number" />

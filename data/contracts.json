@@ -1,6 +1,7 @@
 {
   "contracts": [
     {
+      "input_editable": false,
       "country": "AR",
       "contract_orders": [],
       "description": "Random Description",
@@ -11,6 +12,7 @@
       "unit_price": "ARS"
     },
     {
+      "input_editable": false,
       "country": "AR",
       "contract_orders": [],
       "description": "Random Description",
@@ -21,6 +23,7 @@
       "unit_price": "ARS"
     },
     {
+      "input_editable": false,
       "country": "BR",
       "contract_orders": [],
       "description": "Random Description",
@@ -31,6 +34,7 @@
       "unit_price": "BRL"
     },
     {
+      "input_editable": false,
       "country": "BR",
       "contract_orders": [],
       "description": "Random Description",

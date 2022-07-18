@@ -9,8 +9,12 @@ sap.ui.define([
             return aData.map(el => {
               return {
                 "name": el.customer_name,
+                "input_editable": false,
+                "datePicker_editable": false,
                 "rows": aData.filter(item => item.customer_name === el.customer_name).map(mapItem => {
                   return {
+                    "input_editable": false,
+                    "datePicker_editable": false,
                     "customer_name": mapItem.customer_name,
                     "offer_number": mapItem.offer_number,
                     "country": mapItem.country,

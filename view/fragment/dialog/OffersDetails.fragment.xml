@@ -9,26 +9,46 @@
 >
   <l:FixFlex minFlexSize="500">
     <l:fixContent>
-      <ObjectHeader
-          visible="{= ${detailsDialog>/offers/panel/selectedOffer} ? true : false }"
-          icon="sap-icon://customer-financial-fact-sheet"
-          title="{detailsDialog>/offers/panel/selectedOffer/name}"
-          number="{detailsDialog>/offers/panel/selectedOffer/amount}"
-          numberUnit="Eur"
+      <VBox
+        visible="{= ${detailsDialog>/offers/panel/selectedOffer} ? true : false }" 
+      >
+        <HBox 
+          width="100%"
+          class="sapUiSmallMargin"
+          alignItems="Center"
         >
-          <attributes>
-            <ObjectAttribute text="Customer Name: {detailsDialog>/offers/panel/selectedOffer/customer_name}" />
-            <ObjectAttribute text="Commercial: {detailsDialog>/offers/panel/selectedOffer/commercial}" />
-            <ObjectAttribute text="Pays: {detailsDialog>/offers/panel/selectedOffer/pays}" />
-          </attributes>
-          <statuses>
-            <ObjectStatus
-              visible="{= ${detailsDialog>/offers/panel/selectedOffer} ? true : false }"
-              text="Expired"
-              state="Error" 
-            />
-          </statuses>
-        </ObjectHeader>     
+          <core:Icon class="sapUiTinyMargin" src="sap-icon://customer-financial-fact-sheet" backgroundColor="Marker" size="2rem" />
+          <Title class="sapUiTinyMargin" text="{detailsDialog>/offers/panel/selectedOffer/name}" />
+        </HBox>
+        <HBox
+          justifyContent="SpaceBetween"
+        >
+          <VBox class="sapUiSmallMargin">
+            <!-- customer name -->
+            <HBox justifyContent="SpaceBetween" alignItems="Center">
+              <Label class="sapUiTinyMargin" text="Customer Name:" />
+              <Input class="sapUiTinyMargin" editable="{detailsDialog>/offers/panel/selectedOffer/input_editable}" value="{detailsDialog>/offers/panel/selectedOffer/customer_name}" />
+            </HBox>
+            <!-- commercial -->
+            <HBox justifyContent="SpaceBetween" alignItems="Center">
+              <Label class="sapUiTinyMargin" text="Commercial:" />
+              <Input class="sapUiTinyMargin" editable="{detailsDialog>/offers/panel/selectedOffer/input_editable}" value="{detailsDialog>/offers/panel/selectedOffer/commercial}" />
+            </HBox>
+            <!-- pays -->
+            <HBox justifyContent="SpaceBetween" alignItems="Center">
+              <Label class="sapUiTinyMargin" text="Pays:" />
+              <Input class="sapUiTinyMargin" editable="{detailsDialog>/offers/panel/selectedOffer/input_editable}" value="{detailsDialog>/offers/panel/selectedOffer/pays}" />
+            </HBox>
+          </VBox>
+          <VBox class="sapUiSmallMargin">
+            <!-- customer name -->
+            <HBox justifyContent="SpaceBetween" alignItems="Center">
+              <Label class="sapUiTinyMargin" text="Amount:" />
+              <Input class="sapUiTinyMargin" editable="{detailsDialog>/offers/panel/selectedOffer/input_editable}" value="{detailsDialog>/offers/panel/selectedOffer/amount}" />
+            </HBox>
+          </VBox>
+        </HBox>
+      </VBox>
     </l:fixContent>
     <l:flexContent>
       <gnt2:GanttChartContainer 
@@ -60,7 +80,7 @@
         >
           <gnt2:table>
             <ui:TreeTable
-              selectionMode="None"
+              selectionMode="Single"
               visibleRowCountMode="Auto"
               rows="{
                 path: 'detailsDialog>/offers/treeTable/rows',
@@ -69,13 +89,16 @@
                 }
               }"
             >
+              <ui:toolbar>
+                <core:Fragment fragmentName="simmel.mappaInterattiva.view.fragment.dialog.TableActions" type="XML" />
+              </ui:toolbar>
               <ui:columns>
                 <ui:Column sortProperty="RequirementID" filterProperty="RequirementID">
                   <Text text="Customer Name" wrapping="false"/>
                   <ui:template>
                     <HBox>
                       <items>
-                        <Label text="{detailsDialog>name}"/>
+                        <Input editable="{detailsDialog>input_editable}" value="{detailsDialog>name}"/>
                       </items>
                     </HBox>
                   </ui:template>
@@ -85,10 +108,14 @@
                   <ui:template>
                     <HBox>
                       <items>
-                        <Label text="{
-                          path: 'detailsDialog>startDate',
-                          formatter: '.formatter.formatStandardDate'
-                        }"/>
+                        <DatePicker 
+                          change=".onGanttStartDateChange"
+                          editable="{detailsDialog>datePicker_editable}" 
+                          value="{
+                            path: 'detailsDialog>startDate',
+                            formatter: '.formatter.formatStandardDate'
+                          }"
+                        />
                       </items>
                     </HBox>
                   </ui:template>
@@ -98,10 +125,14 @@
                   <ui:template>
                     <HBox>
                       <items>
-                        <Label text="{
-                          path: 'detailsDialog>endDate',
-                          formatter: '.formatter.formatStandardDate'
-                        }"/>
+                        <DatePicker 
+                          change=".onGanttEndDateChange"
+                          editable="{detailsDialog>datePicker_editable}" 
+                          value="{
+                            path: 'detailsDialog>endDate',
+                            formatter: '.formatter.formatStandardDate'
+                          }"
+                        />
                       </items>
                     </HBox>
                   </ui:template>

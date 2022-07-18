@@ -149,6 +149,7 @@ sap.ui.define([
                 const aFilteredBidnobid = this.getModel("detail").getProperty("/bidnobid").filter(el => el.country === oContext.getProperty("country"));
 
                 oDialog.getContent()[0].getItems()[0].setSelectedKey("agreement");
+                oDialog.getModel("detailsDialog").setProperty("/selectedIconTabKey", oDialog.getContent()[0].getItems()[0].getSelectedKey());
                 oDialog.getModel("detailsDialog").setProperty("/context", oContext.getObject());
                 oDialog.getModel("detailsDialog").setProperty("/agreement/items", aFilteredAgreement);
                 oDialog.getModel("detailsDialog").setProperty("/contracts/items", aFilteredContracts);
@@ -194,6 +195,7 @@ sap.ui.define([
                 const aFilteredBidnobid = this.getModel("detail").getProperty("/bidnobid").filter(el => el.country === country_code);
 
                 oDialog.getContent()[0].getItems()[0].setSelectedKey("agreement");
+                oDialog.getModel("detailsDialog").setProperty("/selectedIconTabKey", oDialog.getContent()[0].getItems()[0].getSelectedKey());
                 oDialog.getModel("detailsDialog").setProperty("/context", oContext);
                 oDialog.getModel("detailsDialog").setProperty("/agreement/items", aFilteredAgreement);
                 oDialog.getModel("detailsDialog").setProperty("/contracts/items", aFilteredContracts);
@@ -201,6 +203,11 @@ sap.ui.define([
                 oDialog.getModel("detailsDialog").setProperty("/bidnobid/items", aFilteredBidnobid);
                 oDialog.open();
             })
+        },
+
+        onIconTabSelect: function( e ){
+            const oDialog = e.getSource().getParent().getParent();
+            oDialog.getModel("detailsDialog").setProperty("/selectedIconTabKey", e.getParameter("selectedKey"));
         },
 
         // Dialog Init //
@@ -220,7 +227,48 @@ sap.ui.define([
             }
 
             this._oContactsDetailsDialog.then(oDialog => {
-                oDialog.getModel("contactsDialog").setData(oContext.getProperty("contacts"));
+                oDialog.getModel("contactsDialog").setData(oContext.getObject());
+                oDialog.open();
+            })
+        },
+
+        _getAddDataPopover: function(oSource, oTable) {
+            if( !this._oAddDataPopover ){
+                this._oAddDataPopover = Fragment.load({
+                    id: this.getView().getId(),
+                    name: "simmel.mappaInterattiva.view.fragment.dialog.subfragment.AddDataPopover",
+                    type: "XML",
+                    controller: this
+                }).then(oPopover => {
+                    this.getView().addDependent(oPopover);
+                    oPopover.setModel(new JSONModel({}), "addData");
+                    return oPopover;
+                });
+            }
+
+            this._oAddDataPopover.then(oPopover => {
+                const oDialog = oSource.getParent().getParent().getParent().getParent().getParent().getParent().getParent().getParent().getParent();
+                oPopover.getModel("addData").setProperty("/context", oTable);
+                oPopover.getModel("addData").setProperty("/selectedIconTabKey", oDialog.getModel("detailsDialog").getProperty("/selectedIconTabKey"));
+                oPopover.openBy(oSource);
+            })
+        },
+
+        _getUploadFileDialog: function (){
+            if( !this._oUploadFileDialog ){
+                this._oUploadFileDialog = Fragment.load({
+                    id: this.getView().getId(),
+                    name: "simmel.mappaInterattiva.view.fragment.dialog.subfragment.UploadFileDialog",
+                    type: "XML",
+                    controller: this
+                }).then(oDialog => {
+                    this.getView().addDependent(oDialog);
+                    oDialog.setModel(new JSONModel({}), "uploadDialog");
+                    return oDialog;
+                });
+            }
+
+            this._oUploadFileDialog.then(oDialog => {
                 oDialog.open();
             })
         },
@@ -230,6 +278,101 @@ sap.ui.define([
         onContactsButtonPress: function(e) {
             const oContext = e.getSource().getBindingContext("detailsDialog");
             this._getContactsDetailsDialog(oContext);
+        },
+
+        onDetailsDialogAddRecordsPress: function(e) {
+            const oSource = e.getSource();
+            const oTable = e.getSource().getParent().getParent();
+            
+            this._getAddDataPopover(oSource, oTable);
+        },
+
+        onGanttStartDateChange: function(e) {
+            const oDate = e.getSource().getDateValue();
+            const oContext = e.getSource().getParent().getParent().getBindingContext("detailsDialog");
+            const sPath = oContext.getPath();
+            const oModel = oContext.getModel();
+
+            oModel.setProperty(sPath + "/startDate", oDate);
+        },
+
+        onGanttEndDateChange: function(e) {
+            const oDate = e.getSource().getDateValue();
+            const oContext = e.getSource().getParent().getParent().getBindingContext("detailsDialog");
+            const sPath = oContext.getPath();
+            const oModel = oContext.getModel();
+
+            oModel.setProperty(sPath + "/endDate", oDate);
+        },
+
+        onAddToExistingRowPress: function(e) {
+            const oTable = e.getSource().getParent().getParent().getModel("addData").getProperty("/context");
+            const sPath = oTable.getBinding("rows").getPath();
+            const oModel = oTable.getModel("detailsDialog");
+            const aList = oModel.getProperty(sPath);
+            const oRow = {};
+
+            if( oTable.getSelectedIndex() === -1 ) return new sap.m.MessageBox.error("Selezionare una riga per proseguire");
+
+            Object.keys(aList[0].rows[0]).forEach( el => {
+                if( aList[0].rows[0][el] instanceof Date ) oRow[el] = null;
+                else oRow[el] = "";
+            });
+
+            oRow.datePicker_editable = true;
+            oRow.input_editable = true;
+
+            oModel.setProperty( oTable.getContextByIndex(oTable.getSelectedIndex()).getPath() + "/rows/" + oModel.getProperty(oTable.getContextByIndex(oTable.getSelectedIndex()).getPath() + "/rows").length, oRow )
+            oTable.expand(oTable.getSelectedIndex());
+        },
+
+        onAddRowPress: function(e) {
+            const oTable = e.getSource().getParent().getParent().getModel("addData").getProperty("/context");
+            const sPath = oTable.getBinding("rows").getPath();
+            const oModel = oTable.getModel("detailsDialog");
+            const aList = oModel.getProperty(sPath);
+            const aKeys = Object.keys(aList[0]);
+            const oO = {};
+
+            aKeys.forEach(el => {
+                const value = aList[0][el];
+                if( typeof value === 'object' && Array.isArray(value) ) oO[el] = [];
+                else if( typeof value === 'object' && !Array.isArray(value) ) oO[el] = {};
+                else oO[el] = "";
+            })
+
+            // eslint-disable-next-line default-case
+            switch( oTable.getMetadata().getElementName() ){
+                case "sap.ui.table.TreeTable":
+                    let oRow = {};
+
+                    oO.input_editable = true;
+                    oO.datePicker_editable = false;
+                    oO.country = aList[0].rows[0].country;
+
+                    Object.keys(aList[0].rows[0]).forEach( el => {
+                        if( aList[0].rows[0][el] instanceof Date ) oRow[el] = null;
+                        else oRow[el] = "";
+                    });
+                    oRow.datePicker_editable = true;
+                    oRow.input_editable = true;
+                    oO.rows = [oRow];
+                    break;
+                case "sap.ui.table.Table":
+                    oO.input_editable = true;
+                    oO.country = aList[0].country;
+                break;
+            }
+
+            oModel.setProperty(sPath + "/" + aList.length, oO);
+        },
+
+        onAddAttachmentPress: function(e) {
+            this._getUploadFileDialog(e);
+        },
+
+        onUploadFileDialogConfirmPress: function(e){
+            e.getSource().getParent().close();
         },
 
         // GANTT CHART
