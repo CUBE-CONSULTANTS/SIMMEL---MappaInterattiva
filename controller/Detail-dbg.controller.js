@@ -367,7 +367,7 @@ sap.ui.define([
             oModel.setProperty(sPath + "/" + aList.length, oO);
         },
 
-        onAddAttachmentPress: function(e) {
+        onAttachmentButtonPress: function(e) {
             this._getUploadFileDialog(e);
         },
 

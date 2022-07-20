@@ -14,31 +14,31 @@
       </toolbar>
       <columns>
         <Column sortProperty="description" filterProperty="description">
-          <m:Label text="Description" />
+          <m:Label tooltip="Description" text="Description" />
           <template>
             <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>description}" />
           </template>
         </Column>
         <Column sortProperty="quantity" filterProperty="quantity">
-          <m:Label text="Quantity" />
+          <m:Label tooltip="Quantity" text="Quantity" />
           <template>
             <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>quantity}" />
           </template>
         </Column>
         <Column sortProperty="amount" filterProperty="amount">
-          <m:Label text="Amount" />
+          <m:Label tooltip="Amount" text="Amount" />
           <template>
             <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>amount}" />
           </template>
         </Column>
         <Column sortProperty="responsible" filterProperty="responsible">
-          <m:Label text="Responsible" />
+          <m:Label tooltip="Responsible" text="Responsible" />
           <template>
             <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>responsible}" />
           </template>
         </Column>
         <Column sortProperty="signature_date" filterProperty="signature_date">
-          <m:Label text="Signature Date" />
+          <m:Label tooltip="Singature Date" text="Signature Date" />
           <template>
             <m:Input editable="{detailsDialog>input_editable}" value="{
               path: 'detailsDialog>signature_date',
@@ -47,17 +47,23 @@
           </template>
         </Column>
         <Column sortProperty="unit_price" filterProperty="unit_price">
-          <m:Label text="Unit Price" />
+          <m:Label tooltip="Unit Price" text="Unit Price" />
           <template>
             <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>unit_price}" />
           </template>
         </Column>
-        <Column sortProperty="contract_orders" filterProperty="contract_orders">
-          <m:Label text="Contract Orders" />
+        <Column hAlign="Center">
+          <m:Label tooltip="Contract Orders" text="Contract Orders" />
           <template>
-            <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>contract_orders}" />
+            <m:Button icon="sap-icon://my-sales-order" press=".onProductsListButtonPress" />
           </template>
         </Column>
+        <Column hAlign="Center">
+            <m:Label tooltip="Attachments" text="Attachments" />
+            <template>
+              <m:Button icon="sap-icon://attachment" press=".onAttachmentButtonPress" />
+            </template>
+          </Column>
       </columns>
     </Table>
   </m:VBox>

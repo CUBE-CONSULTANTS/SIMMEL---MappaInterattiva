@@ -14,25 +14,25 @@
         </toolbar>
         <columns>
           <Column sortProperty="agency" filterProperty="agency">
-            <m:Label text="Agency" />
+            <m:Label tooltip="Agency" text="Agency" />
             <template>
               <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>agency}" />
             </template>
           </Column>
           <Column sortProperty="agent" filterProperty="agent">
-            <m:Label text="Agent" />
+            <m:Label tooltip="Agent" text="Agent" />
             <template>
               <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>agent}" />
             </template>
           </Column>
-          <Column hAlign="Center" sortProperty="contacts" filterProperty="contacts">
-            <m:Label text="Contacts" />
+          <Column hAlign="Center">
+            <m:Label tooltip="Contacts" text="Contacts" />
             <template>
               <m:Button icon="sap-icon://contacts" press=".onContactsButtonPress" />
             </template>
           </Column>
           <Column sortProperty="start_date" filterProperty="start_date">
-            <m:Label text="Start Date" />
+            <m:Label tooltip="Start Date" text="Start Date" />
             <template>
               <m:Input editable="{detailsDialog>input_editable}" value="{
                 path: 'detailsDialog>start_date', 
@@ -41,27 +41,33 @@
             </template>
           </Column>
           <Column sortProperty="sign" filterProperty="sign">
-            <m:Label text="Sign" />
+            <m:Label tooltip="Sign" text="Sign" />
             <template>
               <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>sign}" />
             </template>
           </Column>
           <Column sortProperty="sales_referent" filterProperty="sales_referent">
-            <m:Label text="Sales Referent" />
+            <m:Label tooltip="Sales Referent" text="Sales Referent" />
             <template>
               <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>sales_referent}" />
             </template>
           </Column>
           <Column sortProperty="contact_sales" filterProperty="contact_sales">
-            <m:Label text="Contact Sales" />
+            <m:Label tooltip="Contact Sales" text="Contact Sales" />
             <template>
               <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>contact_sales}" />
             </template>
           </Column>
-          <Column sortProperty="products_list" filterProperty="products_list">
-            <m:Label text="Products List" />
+          <Column hAlign="Center">
+            <m:Label tooltip="Products List" text="Products List" />
             <template>
-              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>products_list}" />
+              <m:Button icon="sap-icon://product" press=".onProductsListButtonPress" />
+            </template>
+          </Column>
+          <Column hAlign="Center">
+            <m:Label tooltip="Attachments" text="Attachments" />
+            <template>
+              <m:Button icon="sap-icon://attachment" press=".onAttachmentButtonPress" />
             </template>
           </Column>
         </columns>

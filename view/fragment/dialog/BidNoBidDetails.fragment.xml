@@ -14,93 +14,99 @@
         </toolbar>
         <columns>
           <Column sortProperty="bidnobid_number" filterProperty="bidnobid_number">
-            <m:Label text="BID Number" />
+            <m:Label tooltip="BID Number" text="BID Number" />
             <template>
-              <m:Text text="{detailsDialog>bidnobid_number}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>bidnobid_number}" />
             </template>
           </Column>
           <Column sortProperty="sales_manager" filterProperty="sales_manager">
-            <m:Label text="Sales Manager" />
+            <m:Label tooltip="Sales Manager" text="Sales Manager" />
             <template>
-              <m:Text text="{detailsDialog>sales_manager}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>sales_manager}" />
             </template>
           </Column>
           <Column sortProperty="program_manager" filterProperty="program_manager">
-            <m:Label text="Program Manager" />
+            <m:Label tooltip="Program Manager" text="Program Manager" />
             <template>
-              <m:Text text="{detailsDialog>program_manager}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>program_manager}" />
             </template>
           </Column>
           <Column sortProperty="preventive_number" filterProperty="preventive_number">
-            <m:Label text="Preventive Number" />
+            <m:Label tooltip="Preventive Number" text="Preventive Number" />
             <template>
-              <m:Text text="{detailsDialog>preventive_number}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>preventive_number}" />
             </template>
           </Column>
           <Column sortProperty="description" filterProperty="description">
-            <m:Label text="Description" />
+            <m:Label tooltip="Description" text="Description" />
             <template>
-              <m:Text text="{detailsDialog>description}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>description}" />
             </template>
           </Column>
           <Column sortProperty="quantity" filterProperty="quantity">
-            <m:Label text="Quantity" />
+            <m:Label tooltip="Quantity" text="Quantity" />
             <template>
-              <m:Text text="{detailsDialog>quantity}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>quantity}" />
             </template>
           </Column>
           <Column sortProperty="customer" filterProperty="customer">
-            <m:Label text="Customer" />
+            <m:Label tooltip="Customer" text="Customer" />
             <template>
-              <m:Text text="{detailsDialog>customer}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>customer}" />
             </template>
           </Column>
           <Column sortProperty="end_user" filterProperty="end_user">
-            <m:Label text="End User" />
+            <m:Label tooltip="End User" text="End User" />
             <template>
-              <m:Text text="{detailsDialog>end_user}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>end_user}" />
             </template>
           </Column>
           <Column sortProperty="total_amount" filterProperty="total_amount">
-            <m:Label text="Total Amount" />
+            <m:Label tooltip="Total Amount" text="Total Amount" />
             <template>
-              <m:Text text="{detailsDialog>total_amount}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>total_amount}" />
             </template>
           </Column>
           <Column sortProperty="bid_deadline" filterProperty="bid_deadline">
-            <m:Label text="BID Deadline" />
+            <m:Label tooltip="BID Deadline" text="BID Deadline" />
             <template>
-              <m:Text text="{detailsDialog>bid_deadline}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>bid_deadline}" />
             </template>
           </Column>
           <Column sortProperty="bid_signdate" filterProperty="bid_signdate">
-            <m:Label text="BID Sign Date" />
+            <m:Label tooltip="BID Sign Date" text="BID Sign Date" />
             <template>
-              <m:Text text="{detailsDialog>bid_signdate}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>bid_signdate}" />
             </template>
           </Column>
           <Column sortProperty="relative_offer" filterProperty="relative_offer">
-            <m:Label text="Relative Offer" />
+            <m:Label tooltip="Relative Offer" text="Relative Offer" />
             <template>
-              <m:Text text="{detailsDialog>relative_offer}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>relative_offer}" />
             </template>
           </Column>
           <Column sortProperty="data" filterProperty="data">
-            <m:Label text="Data" />
+            <m:Label tooltip="Data" text="Data" />
             <template>
-              <m:Text text="{detailsDialog>data}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>data}" />
             </template>
           </Column>
           <Column sortProperty="amount" filterProperty="amount">
-            <m:Label text="Amount" />
+            <m:Label tooltip="Amount" text="Amount" />
             <template>
-              <m:Text text="{detailsDialog>amount}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>amount}" />
             </template>
           </Column>
           <Column sortProperty="contract" filterProperty="contract">
-            <m:Label text="Contract" />
+            <m:Label tooltip="Contract" text="Contract" />
             <template>
-              <m:Text text="{detailsDialog>contract}" />
+              <m:Input editable="{detailsDialog>input_editable}" value="{detailsDialog>contract}" />
+            </template>
+          </Column>
+          <Column hAlign="Center">
+            <m:Label tooltip="Attachments" text="Attachments" />
+            <template>
+              <m:Button icon="sap-icon://attachment" press=".onAttachmentButtonPress" />
             </template>
           </Column>
         </columns>
