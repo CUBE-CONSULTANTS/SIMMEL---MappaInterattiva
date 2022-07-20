@@ -1,23 +1,101 @@
 <core:FragmentDefinition
   xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
   xmlns:core="sap.ui.core"
   xmlns:u="sap.ui.unified"
 >
   <Dialog
-    title="Upload File"
+    title="Attachments"
   >
     <buttons>
-      <Button text="Confirm" press=".onUploadFileDialogConfirmPress"/>
-      <Button text="Cancel" press=".onDefaultDialogClose"/>
+      <Button text="Close" press=".onDefaultDialogClose"/>
     </buttons>
     <content>
-      <u:FileUploader
-        class="sapUiSmallMargin"
-        name="myFileUpload"
-        uploadUrl="upload/"
-        tooltip="Upload your file to the local server"
-        uploadComplete="handleUploadComplete"
-      />
+      <IconTabBar
+            stretchContentHeight="false"
+            backgroundDesign="Transparent"
+            applyContentPadding="true"
+            expanded="{device>/isNoPhone}"
+        >
+          <items>
+            <IconTabFilter text="Data" key="data">
+              <ScrollContainer
+                  height="100%"
+                  width="100%"
+                  horizontal="false"
+                  vertical="true"
+              >
+                <List>
+                  <items>
+                    <CustomListItem>
+                      <HBox alignItems="Center">
+                        <core:Icon size="2rem" src="sap-icon://attachment" class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" />
+                        <VBox class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" >
+                          <Title text="Agency03 - Agent03" />
+                          <Text text="Attachment N° 267" />
+                        </VBox>
+                        <VBox class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" >
+                          <Label text="Uploaded on:" />
+                          <Text text="18/07/2022" />
+                        </VBox>
+                        <Button class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" icon="sap-icon://download" />
+                      </HBox>
+                    </CustomListItem>    
+                    <CustomListItem>
+                      <HBox alignItems="Center">
+                        <core:Icon size="2rem" src="sap-icon://attachment" class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" />
+                        <VBox class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" >
+                          <Title text="Agency03 - Agent03" />
+                          <Text text="Attachment N° 268" />
+                        </VBox>
+                        <VBox class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" >
+                          <Label text="Uploaded on:" />
+                          <Text text="18/07/2022" />
+                        </VBox>
+                        <Button class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" icon="sap-icon://download" />
+                      </HBox>
+                    </CustomListItem>
+                    <CustomListItem>
+                      <HBox alignItems="Center">
+                        <core:Icon size="2rem" src="sap-icon://attachment" class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" />
+                        <VBox class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" >
+                          <Title text="Agency03 - Agent03" />
+                          <Text text="Attachment N° 269" />
+                        </VBox>
+                        <VBox class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" >
+                          <Label text="Uploaded on:" />
+                          <Text text="20/07/2022" />
+                        </VBox>
+                        <Button class="sapUiMediumMarginBegin sapUiSmallMarginTopBottom" icon="sap-icon://download" />
+                      </HBox>
+                    </CustomListItem>                     
+                  </items>
+                </List>
+              </ScrollContainer>
+            </IconTabFilter>
+            <IconTabFilter text="Upload" key="pload">
+              <ScrollContainer
+                  height="100%"
+                  width="100%"
+                  horizontal="false"
+                  vertical="true"
+              >
+                <l:VerticalLayout class="sapUiContentPadding">
+                  <u:FileUploader
+                    class="sapUiSmallMargin"
+                    name="myFileUpload"
+                    uploadUrl="upload/"
+                    tooltip="Upload your file to the local server"
+                    uploadComplete="handleUploadComplete"
+                  />
+                  <HBox width="100%" justifyContent="End">
+                    <Button text="Upload" press=".onUploadFileDialogConfirmPress"/>
+                  </HBox>
+                </l:VerticalLayout>
+              </ScrollContainer>
+            </IconTabFilter>
+          </items>
+        </IconTabBar>
     </content>
   </Dialog>
 </core:FragmentDefinition>
