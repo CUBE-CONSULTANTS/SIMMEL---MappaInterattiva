@@ -94,7 +94,7 @@
               </ui:toolbar>
               <ui:columns>
                 <ui:Column sortProperty="RequirementID" filterProperty="RequirementID">
-                  <Text text="Customer Name" wrapping="false"/>
+                  <Label tooltip="Customer Name" text="Customer Name" wrapping="false"/>
                   <ui:template>
                     <HBox>
                       <items>
@@ -104,7 +104,7 @@
                   </ui:template>
                 </ui:Column>
                 <ui:Column sortProperty="RequirementID" filterProperty="RequirementID">
-                  <Text text="Start Date" wrapping="false"/>
+                  <Label tooltip="Start Date" text="Start Date" wrapping="false"/>
                   <ui:template>
                     <HBox>
                       <items>
@@ -121,7 +121,7 @@
                   </ui:template>
                 </ui:Column>
                 <ui:Column sortProperty="RequirementID" filterProperty="RequirementID">
-                  <Text text="End Date" wrapping="false"/>
+                  <Label tooltip="End Date" text="End Date" wrapping="false"/>
                   <ui:template>
                     <HBox>
                       <items>
@@ -135,6 +135,12 @@
                         />
                       </items>
                     </HBox>
+                  </ui:template>
+                </ui:Column>
+                <ui:Column hAlign="Center">
+                  <Label tooltip="Attachments" text="Attachments" />
+                  <ui:template>
+                    <Button icon="sap-icon://attachment" press=".onAttachmentButtonPress" />
                   </ui:template>
                 </ui:Column>
               </ui:columns>

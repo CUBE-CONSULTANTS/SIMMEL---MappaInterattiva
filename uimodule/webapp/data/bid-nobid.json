@@ -1,6 +1,7 @@
 {
   "bidnobid": [
     {
+      "input_editable": false,
       "country": "AR",
       "bidnobid_number": "0000001",
       "sales_manager": "Mario Rossi",
@@ -19,6 +20,7 @@
       "contract": ""
     },
     {
+      "input_editable": false,
       "country": "AR",
       "bidnobid_number": "0000002",
       "sales_manager": "Carlo Verdi",
@@ -37,6 +39,7 @@
       "contract": ""
     },
     {
+      "input_editable": false,
       "country": "BR",
       "bidnobid_number": "0000003",
       "sales_manager": "Federico Viola",

@@ -12,7 +12,7 @@
           <StandardListItem 
             type="Active"
             icon="sap-icon://add"
-            title="Add New" 
+            title="Add New Row" 
             press=".onAddRowPress"
           />
           <StandardListItem 
@@ -21,12 +21,6 @@
             icon="sap-icon://add"
             title="Add to Existing Row" 
             press=".onAddToExistingRowPress"
-          />
-          <StandardListItem
-            type="Active" 
-            icon="sap-icon://upload"
-            title="Upload File" 
-            press=".onAddAttachmentPress" 
           />
         </items>
       </List>
